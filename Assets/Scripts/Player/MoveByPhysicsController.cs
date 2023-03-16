@@ -34,6 +34,13 @@ namespace Player
         public void OnMove(InputAction.CallbackContext context)
         {
             Vector2 newDirection = context.ReadValue<Vector2>();
+
+            if(newDirection == Vector2.zero)
+            {
+                SetActive(false);
+                return;
+            }
+
             _direction.x = newDirection.x;
             _direction.z = newDirection.y;
             SetActive(true);
