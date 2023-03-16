@@ -14,7 +14,7 @@ namespace Player
         [SerializeField] private bool _isRotating = true;
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float _intervalRotation = 0.1f;
-        
+
         private Vector3 _axisRotation = new(0, 1, 0);
         private Vector3 _direction;
         private Coroutine _rotationCoroutine;
@@ -25,16 +25,20 @@ namespace Player
 
         public bool IsMove => _isMoving;
         public bool IsRotation => _isRotating;
-        public float Speed { set => _speed = value; }
+
+        public float Speed
+        {
+            set => _speed = value;
+        }
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            Vector2 newDirection =context.ReadValue<Vector2>();
+            Vector2 newDirection = context.ReadValue<Vector2>();
             _direction.x = newDirection.x;
             _direction.z = newDirection.y;
             SetActive(true);
         }
-        
+
         protected virtual void SetActive(bool isActive)
         {
             if (IsMove)
@@ -114,10 +118,10 @@ namespace Player
 
                 delta.ToAngleAxis(out float angle, out _axisRotation);
 
-                if (float.IsInfinity(_axisRotation.x)) 
+                if (float.IsInfinity(_axisRotation.x))
                     continue;
-                
-                if (angle > 180f) 
+
+                if (angle > 180f)
                     angle -= 360f;
 
                 Vector3 angular = (0.9f * Mathf.Deg2Rad * angle / _intervalRotation) * _axisRotation.normalized;

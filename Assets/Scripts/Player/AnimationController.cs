@@ -4,14 +4,9 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] private MoveByPhysicsController _moveByPhysicsController;
+    [SerializeField] private Animator _animator;
 
-    private const string IS_MOVING = "isRunning";
-    private Animator _animator;
-
-    private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
+    private string _isMoving = "isRunning";
 
     private void OnEnable()
     {
@@ -25,6 +20,6 @@ public class AnimationController : MonoBehaviour
 
     private void SetAnimation(bool isMoving)
     {
-        _animator.SetBool(IS_MOVING, isMoving);
+        _animator.SetBool(_isMoving, isMoving);
     }
 }
