@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Resourses
 {
-    public class Rock : MonoBehaviour, ICollectable
+    public class Mushroom : MonoBehaviour, ICollectable, IEatable
     {
         public event Action<bool> OnCollected;
         
@@ -12,9 +12,8 @@ namespace Resourses
         
         public void DoCollect()
         {
-            print("Collected Rock");
+            print("I collect mushroom");
             SetCollected(true);
-            Destroy(gameObject);
         }
 
         public void UnCollect()
@@ -22,6 +21,12 @@ namespace Resourses
             SetCollected(false);
         }
 
+        public void DoEating()
+        {
+            print("Mushroom is eaten");
+            Destroy(gameObject);
+        }
+        
         private void SetCollected(bool isCollected)
         {
             IsCollected = isCollected;
