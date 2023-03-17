@@ -1,3 +1,4 @@
+using System;
 using Collectable;
 using UnityEngine;
 
@@ -5,22 +6,28 @@ namespace Player
 {
     public class PlayerEat : MonoBehaviour, IEater
     {
+        private IEatable _eatable;
         public void Eat(IEatable eatable)
         {
-            eatable.DoEating();
-            print("Im eating");
+            eatable.DoEating(() => _eatable = null);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            _eatable = other.gameObject.GetComponent<IEatable>();
         }
 
         private void OnTriggerStay(Collider other)
         {
-            IEatable eatable = other.gameObject.GetComponent<IEatable>();
-
-            if (eatable is null || !Input.GetKeyDown(KeyCode.F))
+            if (_eatable != null && Input.GetKeyDown(KeyCode.F))
             {
-                return;
+                Eat(_eatable);
             }
-            
-            Eat(eatable);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            _eatable = null;
         }
     }
 }

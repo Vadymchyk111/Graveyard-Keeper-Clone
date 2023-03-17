@@ -10,7 +10,6 @@ namespace Resourses
         public bool IsCollected { get; set; }
         public void DoCollect()
         {
-            print("Im collected");
             SetCollected(true);
         }
 
@@ -18,13 +17,13 @@ namespace Resourses
         {
             SetCollected(false);
         }
-
-        public void DoEating()
+        
+        public void DoEating(Action onEatingCompleted)
         {
-            print("Im eated");
+            onEatingCompleted?.Invoke();
             Destroy(gameObject);
         }
-        
+
         private void SetCollected(bool isCollected)
         {
             IsCollected = isCollected;

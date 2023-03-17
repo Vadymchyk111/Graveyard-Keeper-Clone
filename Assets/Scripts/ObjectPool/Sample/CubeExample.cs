@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace ObjectPool
+namespace ObjectPool.Sample
 {
-    public class Cube : MonoBehaviour, IObjectPoolable
+    public class CubeExample : MonoBehaviour, IObjectPoolable
     {
         public float upForce = 1f;
         public float sideForce = .1f;

@@ -1,7 +1,9 @@
+using System;
+
 namespace Collectable
 {
     public interface IEatable
     {
-        void DoEating();
+        void DoEating(Action onEatingCompleded);
     }
 }

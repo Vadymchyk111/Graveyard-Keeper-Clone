@@ -12,7 +12,6 @@ namespace Resourses
         
         public void DoCollect()
         {
-            print("I collect mushroom");
             SetCollected(true);
         }
 
@@ -20,10 +19,10 @@ namespace Resourses
         {
             SetCollected(false);
         }
-
-        public void DoEating()
+        
+        public void DoEating(Action onEatingCompleted)
         {
-            print("Mushroom is eaten");
+            onEatingCompleted?.Invoke();
             Destroy(gameObject);
         }
         

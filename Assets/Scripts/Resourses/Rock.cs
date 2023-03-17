@@ -12,7 +12,6 @@ namespace Resourses
         
         public void DoCollect()
         {
-            print("Collected Rock");
             SetCollected(true);
             Destroy(gameObject);
         }
