@@ -1,4 +1,5 @@
 using System;
+using PlayerInventory;
 
 namespace Collectable
 {
@@ -7,6 +8,7 @@ namespace Collectable
       event Action<bool> OnCollected;
       
       bool IsCollected { get; set; }
+      Item Item { get; set; }
       
       void DoCollect();
       void UnCollect();
