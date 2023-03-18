@@ -23,7 +23,6 @@ namespace PlayerInventory
         public void AddItem(ICollectable collectable)
         {
             _collectables.Add(collectable);
-            print(_collectables.Count);
             OnInventoryChanged?.Invoke();
         }
         
