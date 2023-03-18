@@ -10,7 +10,7 @@ namespace Player
     {
         private Inventory _inventory;
         
-        private void Awake()
+        private void Start()
         {
             _inventory = Inventory.instance;
         }
