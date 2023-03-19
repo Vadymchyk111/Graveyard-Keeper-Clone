@@ -9,11 +9,12 @@ namespace PlayerInventory
     {
         public event Action OnInventoryChanged; 
 
-        private List<ICollectable> _collectables = new();
+        private readonly List<ICollectable> _collectables = new();
 
         public static Inventory instance;
         
         public List<ICollectable> Collectables => _collectables;
+        public int InventorySize => _collectables.Count;
 
         private void Awake()
         {
