@@ -20,22 +20,30 @@ public class RecipeData : ScriptableObject
             return null;
         }
 
+        List<ICollectable> itemsToDelete = new();
+        
         foreach (RecipeElement recipeElement in _recipeElements)
         {
-            int neededItems = inventory.Collectables.Count(x => x.Item.name == recipeElement.Item.name);
-
-            if (neededItems < recipeElement.ItemCount)
+            List<ICollectable> neededItems = inventory.Collectables.Where(x => x.Item.name == recipeElement.Item.name).ToList();
+            
+            if (neededItems.Count < recipeElement.ItemCount)
             {
+                //TODO Add TextMeshPro to Inform the Player
+                Debug.Log($"Недостатньо {recipeElement.Item.name}, у вас {neededItems.Count}, а потрібно {recipeElement.ItemCount}");
                 return null;
             }
 
             for (int i = 0; i < recipeElement.ItemCount; i++)
             {
-                inventory.RemoveItem(
-                    inventory.Collectables.FirstOrDefault(x => x.Item.name == recipeElement.Item.name));
+                itemsToDelete.Add(neededItems[i]);
             }
         }
-        
+
+        for (var i = 0; i < itemsToDelete.Count; i++)
+        {
+            inventory.RemoveItem(itemsToDelete[i]);
+        }
+
         return _craftedItem;
     }
 }

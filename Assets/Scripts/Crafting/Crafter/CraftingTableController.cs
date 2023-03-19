@@ -10,34 +10,46 @@ using UnityEngine.UI;
 
 public class CraftingTableController : MonoBehaviour, ICrafter
 {
+    public event Action<GameObject> OnCrafted;
+    
     [SerializeField] private GameObject _craftingPanel;
     [SerializeField] private List<RecipeData> recipeDataList;
-    
+    [SerializeField] private CraftingUI _craftingUI;
+
     private Inventory _inventory;
     private RecipeData _currentRecipe;
     
-    public event Action<GameObject> OnCrafted;
     public bool IsActivated { get; set; }
     public List<RecipeData> RecipeDataList 
     { 
         get => recipeDataList;
         set => recipeDataList = value; 
     }
-
+    
     private void Awake()
     {
         SetActiveCraftingPanel(IsActivated);
     }
 
+    private void OnEnable()
+    {
+        _craftingUI.OnSelectRecipeEvent += TryCraft;
+    }
+
+    private void OnDisable()
+    {
+        _craftingUI.OnSelectRecipeEvent -= TryCraft;
+    }
+
     private void Start()
     {
         _inventory = Inventory.instance;
-        _craftingPanel.GetComponentInParent<CraftingUI>().CreateCraftingSlots(RecipeDataList);
+        _craftingUI.CreateCraftingSlots(RecipeDataList);
     }
 
-    public void TryCraft()
+    public void TryCraft(RecipeData recipeData)
     {
-        _currentRecipe = recipeDataList[0];
+        _currentRecipe = recipeData;
         GameObject craftedObject = _currentRecipe.TryCraft(_inventory);
         
         if (craftedObject == null)
@@ -52,11 +64,6 @@ public class CraftingTableController : MonoBehaviour, ICrafter
     public void SetActiveCraftingPanel(bool isActive)
     {
         _craftingPanel.SetActive(isActive);
-    }
-
-    private void SetCurrentRecipe(RecipeData recipeData)
-    {
-        _currentRecipe = recipeData;
     }
     
     private void OnTriggerEnter(Collider other)

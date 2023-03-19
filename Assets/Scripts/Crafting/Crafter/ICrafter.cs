@@ -12,6 +12,6 @@ namespace Crafting.Crafter
         List<RecipeData> RecipeDataList { get; set; }
         bool IsActivated { get; set; }
 
-        void TryCraft();
+        void TryCraft(RecipeData recipeData);
     }
 }

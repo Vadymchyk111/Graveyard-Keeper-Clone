@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
 using Crafting.Recipy;
+using Crafting.Recipy.UI;
 using UnityEngine;
 
 namespace Crafting.Crafter
 {
     public class CraftingUI : MonoBehaviour
     {
+        public event Action<RecipeData> OnSelectRecipeEvent;
+        
         [SerializeField] private Transform recipeParent;
         [SerializeField] private GameObject recipeSlotPrefab;
 
@@ -14,12 +17,18 @@ namespace Crafting.Crafter
 
         public void CreateCraftingSlots(List<RecipeData> recipes)
         {
-            foreach (RecipeData recipeData in recipes)
+            for (int i = 0; i < recipes.Count; i++)
             {
                 GameObject recipeSlotObj = Instantiate(recipeSlotPrefab, recipeParent);
                 RecipeSlot recipeSlot = recipeSlotObj.GetComponent<RecipeSlot>();
-                recipeSlot.AddItem(recipeData.item);
+                recipeSlot.Init(recipes[i]);
+                recipeSlot.OnRecipySelected += OnSelectRecipe;
             }
+        }
+
+        private void OnSelectRecipe(RecipeData recipeData)
+        {
+            OnSelectRecipeEvent?.Invoke(recipeData);
         }
     }
 }
