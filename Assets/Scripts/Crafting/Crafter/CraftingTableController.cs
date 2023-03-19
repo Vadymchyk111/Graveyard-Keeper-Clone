@@ -68,6 +68,13 @@ public class CraftingTableController : MonoBehaviour, ICrafter
     
     private void OnTriggerEnter(Collider other)
     {
+        //todo create class Constants and use Constants.TAG_PLAYER insted of "Player"
+        /*
+         class Constants
+        {
+            public const string TAG_PLAYER = "Player";
+        }
+         */
         if (other.gameObject.CompareTag("Player"))
         {
             IsActivated = true;
@@ -77,6 +84,7 @@ public class CraftingTableController : MonoBehaviour, ICrafter
 
     private void OnTriggerExit(Collider other)
     {
+        //todo use Constants.TAG_PLAYER
         if (other.gameObject.CompareTag("Player"))
         {
             IsActivated = false;

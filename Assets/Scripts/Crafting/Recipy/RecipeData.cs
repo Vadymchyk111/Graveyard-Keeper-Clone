@@ -28,6 +28,7 @@ public class RecipeData : ScriptableObject
             
             if (neededItems.Count < recipeElement.ItemCount)
             {
+                //TODO replace Debug.Log to Debug.LogError
                 //TODO Add TextMeshPro to Inform the Player
                 Debug.Log($"Недостатньо {recipeElement.Item.name}, у вас {neededItems.Count}, а потрібно {recipeElement.ItemCount}");
                 return null;

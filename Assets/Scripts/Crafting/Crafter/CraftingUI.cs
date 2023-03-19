@@ -13,6 +13,7 @@ namespace Crafting.Crafter
         [SerializeField] private Transform recipeParent;
         [SerializeField] private GameObject recipeSlotPrefab;
 
+        //todo remove unused
         private List<RecipeSlot> _recipeSlots;
 
         public void CreateCraftingSlots(List<RecipeData> recipes)
