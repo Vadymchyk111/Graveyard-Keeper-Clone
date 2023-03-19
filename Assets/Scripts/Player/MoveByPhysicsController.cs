@@ -15,6 +15,7 @@ namespace Player
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float _intervalRotation = 0.1f;
 
+        private PlayerInputActionsAsset _actionsAsset;
         private Vector3 _axisRotation = new(0, 1, 0);
         private Vector3 _direction;
         private Coroutine _rotationCoroutine;
@@ -31,19 +32,19 @@ namespace Player
             set => _speed = value;
         }
 
-        public void OnMove(InputAction.CallbackContext context)
+        private void Awake()
         {
-            Vector2 newDirection = context.ReadValue<Vector2>();
-            
-            if(newDirection == Vector2.zero)
-            {
-                SetActive(false);
-                return;
-            }
+            _actionsAsset = new PlayerInputActionsAsset();
+        }
 
-            _direction.x = newDirection.x;
-            _direction.z = newDirection.y;
-            SetActive(true);
+        private void OnEnable()
+        {
+            _actionsAsset.Player.Move.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _actionsAsset.Player.Move.Disable();
         }
 
         protected virtual void SetActive(bool isActive)
@@ -112,6 +113,11 @@ namespace Player
                 _rigidbody.angularVelocity = Vector3.zero;
             }
         }
+        
+        private void FixedUpdate()
+        {
+            CheckActiveMovement(_actionsAsset.Player.Move.ReadValue<Vector2>());
+        }
 
         protected virtual IEnumerator RotationCoroutine()
         {
@@ -135,6 +141,19 @@ namespace Player
 
                 _rigidbody.angularVelocity = angular;
             }
+        }
+
+        private void CheckActiveMovement(Vector2 direction)
+        {
+            if(direction == Vector2.zero)
+            {
+                SetActive(false);
+                return;
+            }
+
+            _direction.x = direction.x;
+            _direction.z = direction.y;
+            SetActive(true);
         }
     }
 }
