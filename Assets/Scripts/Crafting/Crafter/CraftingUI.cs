@@ -12,17 +12,14 @@ namespace Crafting.Crafter
         
         [SerializeField] private Transform recipeParent;
         [SerializeField] private GameObject recipeSlotPrefab;
-
-        //todo remove unused
-        private List<RecipeSlot> _recipeSlots;
-
+        
         public void CreateCraftingSlots(List<RecipeData> recipes)
         {
-            for (int i = 0; i < recipes.Count; i++)
+            foreach (RecipeData recipeData in recipes)
             {
                 GameObject recipeSlotObj = Instantiate(recipeSlotPrefab, recipeParent);
                 RecipeSlot recipeSlot = recipeSlotObj.GetComponent<RecipeSlot>();
-                recipeSlot.Init(recipes[i]);
+                recipeSlot.Init(recipeData);
                 recipeSlot.OnRecipySelected += OnSelectRecipe;
             }
         }

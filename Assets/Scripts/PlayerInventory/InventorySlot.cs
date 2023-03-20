@@ -1,4 +1,3 @@
-using System;
 using Collectable;
 using UnityEngine;
 using UnityEngine.UI;

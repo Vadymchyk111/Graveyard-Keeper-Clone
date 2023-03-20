@@ -1,5 +1,6 @@
 using System;
 using Collectable;
+using Eatable;
 using PlayerInventory;
 using UnityEngine;
 

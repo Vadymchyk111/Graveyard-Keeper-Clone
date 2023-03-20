@@ -5,8 +5,7 @@ namespace PlayerInventory
     [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
     public class Item : ScriptableObject
     {
-        //TODO maybe replace to? public string name = string.Empty;
-        public new string name = "";
+        public new string name = string.Empty;
         public Sprite icon;
         public bool isDefault;
     }

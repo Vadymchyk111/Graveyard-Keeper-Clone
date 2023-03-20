@@ -1,4 +1,4 @@
-namespace Collectable
+namespace Eatable
 {
     public interface IEater
     {

@@ -1,24 +1,20 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Collectable;
 using Crafting.Crafter;
+using Crafting.Recipy;
 using PlayerInventory;
 using UnityEngine;
-using UnityEngine.UI;
+using static General.Contants;
 
 public class CraftingTableController : MonoBehaviour, ICrafter
 {
-    public event Action<GameObject> OnCrafted;
-    
     [SerializeField] private GameObject _craftingPanel;
     [SerializeField] private List<RecipeData> recipeDataList;
     [SerializeField] private CraftingUI _craftingUI;
 
     private Inventory _inventory;
     private RecipeData _currentRecipe;
-    
+
     public bool IsActivated { get; set; }
     public List<RecipeData> RecipeDataList 
     { 
@@ -61,34 +57,30 @@ public class CraftingTableController : MonoBehaviour, ICrafter
         _inventory.AddItem(collectable);
     }
 
-    public void SetActiveCraftingPanel(bool isActive)
+    private void SetActiveCraftingPanel(bool isActive)
     {
         _craftingPanel.SetActive(isActive);
     }
     
     private void OnTriggerEnter(Collider other)
     {
-        //todo create class Constants and use Constants.TAG_PLAYER insted of "Player"
-        /*
-         class Constants
+        if (!other.gameObject.CompareTag(PLAYER_TAG))
         {
-            public const string TAG_PLAYER = "Player";
+            return;
         }
-         */
-        if (other.gameObject.CompareTag("Player"))
-        {
-            IsActivated = true;
-            SetActiveCraftingPanel(IsActivated);
-        }
+        
+        IsActivated = true;
+        SetActiveCraftingPanel(IsActivated);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //todo use Constants.TAG_PLAYER
-        if (other.gameObject.CompareTag("Player"))
+        if (!other.gameObject.CompareTag(PLAYER_TAG))
         {
-            IsActivated = false;
-            SetActiveCraftingPanel(IsActivated);
+            return;
         }
+        
+        IsActivated = false;
+        SetActiveCraftingPanel(IsActivated);
     }
 }

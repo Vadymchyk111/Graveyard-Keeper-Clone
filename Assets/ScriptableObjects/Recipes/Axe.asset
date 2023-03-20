@@ -15,6 +15,8 @@ MonoBehaviour:
   _recipeElements:
   - _item: {fileID: 11400000, guid: bed981d5bf2daa24fa2f8027d037c290, type: 2}
     _itemCount: 2
+  - _item: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
+    _itemCount: 2
   _craftedItem: {fileID: 8584625774295856397, guid: e5379a23fc044ff4784b05701d1672f5,
     type: 3}
   item: {fileID: 11400000, guid: 039f2ff57540a8d4fbd4acbf952559bc, type: 2}
