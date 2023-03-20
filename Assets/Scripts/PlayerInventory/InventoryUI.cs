@@ -8,13 +8,13 @@ namespace PlayerInventory
             
         private Inventory _inventory;
 
-        private void OnEnable()
+        private void Start()
         {
             _inventory = Inventory.instance;
             _inventory.OnInventoryChanged += UpdateUI;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _inventory.OnInventoryChanged -= UpdateUI;
         }
