@@ -17,12 +17,22 @@ namespace Player
 
         public void PickUp(ICollectable collectable)
         {
+            if (_inventory.InventorySize >= 16)
+            {
+                return;
+            }
+            
             collectable.DoCollect();
             _inventory.AddItem(collectable);
         }
 
         public void ThrowOut(ICollectable collectable)
         {
+            if (_inventory.InventorySize <= 0)
+            {
+                return;
+            }
+            
             collectable.UnCollect();
             _inventory.RemoveItem(collectable);
         }

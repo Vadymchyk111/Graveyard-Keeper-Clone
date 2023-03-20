@@ -6,7 +6,7 @@ public class AnimationController : MonoBehaviour
     [SerializeField] private MoveByPhysicsController _moveByPhysicsController;
     [SerializeField] private Animator _animator;
 
-    private string _isMoving = "isRunning";
+    private readonly string _isMoving = "isRunning";
 
     private void OnEnable()
     {

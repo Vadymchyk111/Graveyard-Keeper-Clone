@@ -1,6 +1,6 @@
 using System;
 
-namespace Collectable
+namespace Eatable
 {
     public interface IEatable
     {
