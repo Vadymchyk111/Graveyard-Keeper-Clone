@@ -15,9 +15,12 @@ GameObject:
   - component: {fileID: 7496314808260974781}
   - component: {fileID: 801148505}
   - component: {fileID: 801148511}
+  - component: {fileID: 727435679}
+  - component: {fileID: 727435686}
+  - component: {fileID: 727435687}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 9df04c9c889ef114e98b2dba81e99a3e,
     type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -109,14 +112,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b1a1b97a-77c4-44b9-b07c-d2150eeea2dc
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c98c30a7-fc3d-4f05-beba-bd19896db416
-    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d331760e-e64f-43ee-a612-d1d9ea034977
-    m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 4cf87c9f-9d0f-4715-97d7-24dbeee702d4
@@ -157,6 +152,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: cf154263-8de1-4bb3-8975-b4535dcef2e5
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 976bf995-70cb-42ea-9b88-fe287184560f
+    m_ActionName: Player/OpenCraftingTable[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43db33a9-2158-4ff7-a990-380a4a06f7c3
+    m_ActionName: Player/OpenInventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -203,6 +206,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52815f689f2494ea0cce05e9f88e751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &727435679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496314808260974780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb0fad1403f4cd58e93c018229dabd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventoryPanel: {fileID: 0}
+--- !u!114 &727435686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496314808260974780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccdd7069005284927820047da3ca4db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &727435687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496314808260974780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bba0c04c1e9547ae95a2af0f7d5f265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerExtractor: {fileID: 727435686}
+  _playerCollector: {fileID: 801148505}
 --- !u!1001 &7496314808187660521
 PrefabInstance:
   m_ObjectHideFlags: 0
