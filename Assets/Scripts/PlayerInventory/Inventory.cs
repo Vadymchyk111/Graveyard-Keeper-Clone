@@ -13,13 +13,13 @@ namespace PlayerInventory
         [SerializeField] private GameObject _inventoryPanel;
         
         private PlayerInputActionsAsset _playerInputActionsAsset;
-        private readonly List<ICollectable> _collectables = new();
+        private readonly List<Item> items = new();
         
         public static Inventory instance;
 
         public bool IsActivated { get; set; }
-        public List<ICollectable> Collectables => _collectables;
-        public int InventorySize => _collectables.Count;
+        public List<Item> Items => items;
+        public int InventorySize => items.Count;
 
         private void Awake()
         {
@@ -40,15 +40,16 @@ namespace PlayerInventory
             _playerInputActionsAsset.Player.OpenInventory.Disable();
         }
 
-        public void AddItem(ICollectable collectable)
+        public void AddItem(Item item)
         {
-            _collectables.Add(collectable);
+            items.Add(item);
             OnInventoryChanged?.Invoke();
         }
         
-        public void RemoveItem(ICollectable collectable)
+        public void RemoveItem(Item item)
         {
-            _collectables.Remove(collectable);
+            items.Remove(item);
+            OnInventoryChanged?.Invoke();
         }
         
         private void SetActiveCraftingPanel(InputAction.CallbackContext context)

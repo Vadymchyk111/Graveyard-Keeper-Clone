@@ -10,11 +10,11 @@ namespace PlayerInventory
 
         private Item _item;
 
-        public void AddItem(ICollectable collectable)
+        public void AddItem(Item item)
         {
-            _item = collectable.Item;
+            _item = item;
             
-            _icon.sprite = collectable.Item.icon;
+            _icon.sprite = _item.icon;
             _icon.enabled = true;
         }
         

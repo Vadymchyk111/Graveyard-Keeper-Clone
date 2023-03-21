@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Player;
+using PlayerInventory;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,16 +12,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        //_playerExtractor.OnExtracted += FillInventoryCollactables;
+        _playerExtractor.OnExtracted += FillInventory;
     }
-    /*
-    private void FillInventoryCollactables(ICollectable[] collectables)
+
+    private void OnDisable()
     {
+        _playerExtractor.OnExtracted -= FillInventory;
+    }
 
-        for()
+    private void FillInventory(List<Item> items)
+    {
+        foreach (Item item in items)
         {
-        _playerCollector.PickUp(collectable[i]);
+            _playerCollector.PickUp(item);
         }
-
-    }*/
+    }
 }

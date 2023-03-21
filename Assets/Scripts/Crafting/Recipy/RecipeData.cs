@@ -16,16 +16,16 @@ namespace Crafting.Recipy
     
         public GameObject TryCraft(Inventory inventory)
         {
-            if (inventory.Collectables == null || inventory.Collectables.Count == 0)
+            if (inventory.Items == null || inventory.Items.Count == 0)
             {
                 return null;
             }
 
-            List<ICollectable> itemsToDelete = new();
+            List<Item> itemsToDelete = new();
         
             foreach (RecipeElement recipeElement in _recipeElements)
             {
-                List<ICollectable> neededItems = inventory.Collectables.Where(x => x.Item.name == recipeElement.Item.name).ToList();
+                List<Item> neededItems = inventory.Items.Where(x => x.name == recipeElement.Item.name).ToList();
             
                 if (neededItems.Count < recipeElement.ItemCount)
                 {
@@ -39,9 +39,9 @@ namespace Crafting.Recipy
                 }
             }
 
-            foreach (ICollectable collectable in itemsToDelete)
+            foreach (Item itemToDelete in itemsToDelete)
             {
-                inventory.RemoveItem(collectable);
+                inventory.RemoveItem(itemToDelete);
             }
 
             return _craftedItem;

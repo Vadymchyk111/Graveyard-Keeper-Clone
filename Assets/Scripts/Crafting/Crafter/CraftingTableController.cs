@@ -54,7 +54,7 @@ public class CraftingTableController : MonoBehaviour, ICrafter
         }
         
         ICollectable collectable = craftedObject.GetComponent<ICollectable>();
-        _inventory.AddItem(collectable);
+        _inventory.AddItem(collectable.Item);
     }
 
     private void SetActiveCraftingPanel(bool isActive)

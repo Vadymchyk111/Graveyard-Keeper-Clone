@@ -28,9 +28,9 @@ namespace PlayerInventory
             
             for (int i = 0; i < _inventorySlots.Length; i++)
             {
-                if (i < _inventory.Collectables.Count)
+                if (i < _inventory.Items.Count)
                 {
-                    _inventorySlots[i].AddItem(_inventory.Collectables[i]);
+                    _inventorySlots[i].AddItem(_inventory.Items[i]);
                 }
                 else
                 {

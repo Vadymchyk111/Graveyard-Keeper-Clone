@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d40c20a34be44409f6fc1bb538125b, type: 3}
   m_Name: TreeResourceData
   m_EditorClassIdentifier: 
-  _resourceEntities: []
-  _hitPoints: 0
+  _resourceEntities:
+  - _resourceData: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
+    _count: 2
+  - _resourceData: {fileID: 11400000, guid: 2035620323d24234aad523d60d5c11c3, type: 2}
+    _count: 2
+  _hitPoints: 5

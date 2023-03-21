@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using Collectable;
 using PlayerInventory;
 using UnityEngine;
@@ -23,7 +21,17 @@ namespace Player
             }
             
             collectable.DoCollect();
-            _inventory.AddItem(collectable);
+            _inventory.AddItem(collectable.Item);
+        }
+        
+        public void PickUp(Item item)
+        {
+            if (_inventory.InventorySize >= 16)
+            {
+                return;
+            }
+            
+            _inventory.AddItem(item);
         }
 
         public void ThrowOut(ICollectable collectable)
@@ -34,7 +42,7 @@ namespace Player
             }
             
             collectable.UnCollect();
-            _inventory.RemoveItem(collectable);
+            _inventory.RemoveItem(collectable.Item);
         }
 
         private void OnTriggerEnter(Collider other)
