@@ -8,6 +8,7 @@ namespace PlayerInventory
 {
     public class Inventory : MonoBehaviour
     {
+        public event Action<Item> OnUseItem;
         public event Action OnInventoryChanged;
 
         [SerializeField] private GameObject _inventoryPanel;
@@ -51,7 +52,12 @@ namespace PlayerInventory
             items.Remove(item);
             OnInventoryChanged?.Invoke();
         }
-        
+
+        public void UseItem(Item item)
+        {
+            OnUseItem?.Invoke(item);
+        }
+
         private void SetActiveCraftingPanel(InputAction.CallbackContext context)
         {
             IsActivated = !IsActivated;

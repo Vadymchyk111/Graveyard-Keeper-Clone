@@ -31,12 +31,19 @@ namespace PlayerInventory
                 if (i < _inventory.Items.Count)
                 {
                     _inventorySlots[i].AddItem(_inventory.Items[i]);
+                    _inventorySlots[i].OnInventorySelected += SelectInventory;
                 }
                 else
                 {
                     _inventorySlots[i].ClearItem();
+                    _inventorySlots[i].OnInventorySelected -= SelectInventory;
                 }
             }
+        }
+
+        private void SelectInventory(Item item)
+        {
+            _inventory.UseItem(item);
         }
     }
 }
