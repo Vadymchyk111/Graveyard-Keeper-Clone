@@ -17,7 +17,7 @@ namespace Player
         public void StartExtract(IExtractable extractable)
         {
             //TODO add check equiped axe
-            //if axe equiped start animation
+            //if axe equiped start specific animation
 
             if(extractable != null)
             {

@@ -18,8 +18,13 @@ public class AnimationController : MonoBehaviour
         _moveByPhysicsController.OnPlayerMove -= SetAnimation;
     }
 
+    //TODO rename to SetMove
     private void SetAnimation(bool isMoving)
     {
         _animator.SetBool(_isMoving, isMoving);
     }
+
+    //TODO add SetCut + switch animation layer
+    //TODO add SetDig + switch animation layer
+    //TODO add SetHollow + switch animation layer
 }
