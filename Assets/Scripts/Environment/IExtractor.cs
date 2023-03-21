@@ -9,7 +9,7 @@ namespace Environment
     {
         event Action<List<Item>> OnExtracted;
 
-        void StartExtract();
+        void StartExtract(IExtractable extractable);
         void StopExtract();
         void ExtractionCompleted(ResourceEntity[] resourceEntities);
     }

@@ -1,31 +1,39 @@
 using System;
 using System.Collections;
+using General;
 using Resourses.Generall;
 using UnityEngine;
-using static General.Contants;
 
 namespace Environment.Tree
 {
-    public class TreeController : MonoBehaviour, IExtractable
+    public class DestractableResourceController : MonoBehaviour, IExtractable
     {
         public event Action<ResourceEntity[]> OnExtracted;
         
         [SerializeField] private DestructibleResourceHolderData _destructibleResourceHolderData;
-        [SerializeField] private float _timeToDestroy;
+        [SerializeField] private float _delayBeforeHitInSeconds;
         
         private Coroutine extracting;
         private WaitForSeconds _waitForSeconds;
-
-        private void Start()
-        {
-            _waitForSeconds = new WaitForSeconds(_timeToDestroy);
-        }
+        private int _hitPoints;
 
         public bool IsEmpty { get; set; }
 
+        private void Start()
+        {
+            _hitPoints = _destructibleResourceHolderData.HitPoints; 
+            _waitForSeconds = new WaitForSeconds(_delayBeforeHitInSeconds);
+        }
+
         public void StartExtracting(IExtractor extractor)
         {
-            extractor.StartExtract();
+            extractor.StartExtract(this);
+
+            if (extracting != null)
+            {
+                StopCoroutine(extracting);
+            }
+
             extracting = StartCoroutine(ExtractingCoroutine());
         }
 
@@ -36,17 +44,14 @@ namespace Environment.Tree
             {
                 StopCoroutine(extracting);
             }
-         
         }
 
         private IEnumerator ExtractingCoroutine()
         {
-            int hitPoints = _destructibleResourceHolderData.HitPoints;
-
-            while (hitPoints > 0)
+            while (_hitPoints > 0)
             {
                 yield return _waitForSeconds;
-                hitPoints--;
+                _hitPoints--;
             }
 
             OnExtracted?.Invoke(_destructibleResourceHolderData.ResourceEntities);
@@ -54,7 +59,7 @@ namespace Environment.Tree
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.gameObject.CompareTag(PLAYER_TAG))
+            if (!other.gameObject.CompareTag(Contants.PLAYER_TAG))
             {
                 return;
             }
@@ -71,7 +76,7 @@ namespace Environment.Tree
 
         private void OnTriggerExit(Collider other)
         {
-            if (!other.gameObject.CompareTag(PLAYER_TAG))
+            if (!other.gameObject.CompareTag(Contants.PLAYER_TAG))
             {
                 return;
             }

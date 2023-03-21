@@ -12,28 +12,29 @@ namespace Player
     {
         public event Action<List<Item>> OnExtracted;
 
-        [SerializeField] private TreeController _treeController;
+        private IExtractable _extractableResourceController;
 
-        private void OnEnable()
-        {
-            _treeController.OnExtracted += ExtractionCompleted;
-        }
-
-        private void OnDisable()
-        {
-            _treeController.OnExtracted -= ExtractionCompleted;
-        }
-
-        public void StartExtract()
+        public void StartExtract(IExtractable extractable)
         {
             //TODO add check equiped axe
             //if axe equiped start animation
+
+            if(extractable != null)
+            {
+                _extractableResourceController = extractable;
+                _extractableResourceController.OnExtracted += ExtractionCompleted;
+            }
         }
 
         public void StopExtract()
         {
             //TODO add check equiped axe
             //if axe equiped stop animation
+            if (_extractableResourceController != null)
+            {
+                _extractableResourceController.OnExtracted -= ExtractionCompleted;
+                _extractableResourceController = null;
+            }
         }
 
         public void ExtractionCompleted(ResourceEntity[] resourceEntities)
