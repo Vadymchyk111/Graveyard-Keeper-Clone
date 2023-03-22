@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Resourses.Generall
 {
-    [CreateAssetMenu(fileName = "ResourceData", menuName = "ScriptableObjects/ResourceData")]
+    [CreateAssetMenu(fileName = "ResourceHolder", menuName = "ResourceHolder/ResourceHolder")]
     public class ResourceHolderData : ScriptableObject
     {
         [SerializeField] protected ResourceEntity[] _resourceEntities;

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d40c20a34be44409f6fc1bb538125b, type: 3}
-  m_Name: TreeResourceData
+  m_Script: {fileID: 11500000, guid: 749c5eeb75374bd4682927aa67ac6d01, type: 3}
+  m_Name: AppleRecipe
   m_EditorClassIdentifier: 
-  _resourceEntities:
-  - _resourceData: {fileID: 11400000, guid: f42ceed72f3da41fcb17a7b02a47cd9c, type: 2}
-    _count: 3
-  _hitPoints: 5
+  _recipeElements:
+  - _item: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
+    _itemCount: 2
+  _item: {fileID: 11400000, guid: bed981d5bf2daa24fa2f8027d037c290, type: 2}

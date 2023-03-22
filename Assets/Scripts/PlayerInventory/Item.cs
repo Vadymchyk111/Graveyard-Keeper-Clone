@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace PlayerInventory
 {
-    [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
+    [CreateAssetMenu(fileName = "New Item", menuName = "Item/Item")]
     public class Item : ScriptableObject
     {
         [SerializeField] private new string name = string.Empty;

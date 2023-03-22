@@ -4,37 +4,22 @@ namespace Player
 {
     public class AnimationController : MonoBehaviour
     {
-        [SerializeField] private MoveByPhysicsController _moveByPhysicsController;
-        [SerializeField] private PlayerExtractor _playerExtractor;
         [SerializeField] private Animator _animator;
 
         private readonly string _isMoving = "isRunning";
-        private readonly string _chopping = "Chopping";
+        private int _animationLayerIndexTopBody = 1;
 
-        private void OnEnable()
-        {
-            _moveByPhysicsController.OnPlayerMove += SetMove;
-            _playerExtractor.OnExtracting += SetChoppingTree;
-        }
-
-        private void OnDisable()
-        {
-            _moveByPhysicsController.OnPlayerMove -= SetMove;
-            _playerExtractor.OnExtracting += SetChoppingTree;
-        }
-        
-        private void SetMove(bool isMoving)
+        public void SetMove(bool isMoving)
         {
             _animator.SetBool(_isMoving, isMoving);
         }
 
-        private void SetChoppingTree()
+        public void SetExtraction(bool isActive, string animationParametr)
         {
-            _animator.SetTrigger(_chopping);
-        }
+            float weight = isActive ? 1 : 0;
+            _animator.SetBool(animationParametr, isActive);
 
-        //TODO add SetCut + switch animation layer
-        //TODO add SetDig + switch animation layer
-        //TODO add SetHollow + switch animation layer
+            _animator.SetLayerWeight(_animationLayerIndexTopBody, weight);
+        }
     }
 }

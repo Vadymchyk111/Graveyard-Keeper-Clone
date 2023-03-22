@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c66c14de43b4bcb95c9580c83e8c610, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: 31d40c20a34be44409f6fc1bb538125b, type: 3}
+  m_Name: TreeDestractableResourceHolder
   m_EditorClassIdentifier: 
-  name: Sword
-  icon: {fileID: 21300000, guid: 9dc1bebd60c8d7547bbbf7352a362762, type: 3}
+  _resourceEntities:
+  - _resourceData: {fileID: 11400000, guid: f42ceed72f3da41fcb17a7b02a47cd9c, type: 2}
+    _count: 3
+  _hitPoints: 5

@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c66c14de43b4bcb95c9580c83e8c610, type: 3}
-  m_Name: Axe
+  m_Script: {fileID: 11500000, guid: 749c5eeb75374bd4682927aa67ac6d01, type: 3}
+  m_Name: AxeRecipe
   m_EditorClassIdentifier: 
-  name: Axe
-  icon: {fileID: 21300000, guid: 68e4af6af4911e14aa711fc34311ee53, type: 3}
+  _recipeElements:
+  - _item: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
+    _itemCount: 2
+  _item: {fileID: 11400000, guid: 039f2ff57540a8d4fbd4acbf952559bc, type: 2}

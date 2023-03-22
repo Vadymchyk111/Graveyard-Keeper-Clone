@@ -13,14 +13,14 @@ namespace Environment.Resources
         
         [SerializeField] private DestructibleResourceHolderData _destructibleResourceHolderData;
         [SerializeField] private float _delayBeforeHitInSeconds;
-        [SerializeField] private Item _instrumentToDestroy;
+        [SerializeField] private Item _tool;
         
         private Coroutine extracting;
         private WaitForSeconds _waitForSeconds;
         private int _hitPoints;
 
         public bool IsEmpty { get; set; }
-        public Item InstrumentToDestroy => _instrumentToDestroy;
+        public Item Tool => _tool;
 
         private void Start()
         {

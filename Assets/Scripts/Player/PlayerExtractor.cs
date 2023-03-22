@@ -10,8 +10,8 @@ namespace Player
     public class PlayerExtractor : MonoBehaviour, IExtractor
     {
         public event Action<List<Item>> OnExtracted;
-        public event Action OnExtracting;
 
+        [SerializeField] private ItemAnimationEntityManager _itemAnimationEntityManager;
         [SerializeField] private PlayerController _playerController;
 
         private IExtractable _extractableResourceController;
@@ -27,10 +27,11 @@ namespace Player
             {
                 return;
             }
-            
-            OnExtracting?.Invoke();
+
             _extractableResourceController = extractable;
             _extractableResourceController.OnExtracted += ExtractionCompleted;
+
+            SetActiveExtrationAnimation(true, _extractableResourceController.Tool);
         }
 
         public void StopExtract()
@@ -46,6 +47,7 @@ namespace Player
             }
                 
             _extractableResourceController.OnExtracted -= ExtractionCompleted;
+            SetActiveExtrationAnimation(false, _extractableResourceController.Tool);
             _extractableResourceController = null;
         }
 
@@ -62,6 +64,17 @@ namespace Player
             }
         
             OnExtracted?.Invoke(items);
+            StopExtract();
+        }
+
+        private void SetActiveExtrationAnimation(bool isActive, Item item)
+        {
+            string animationParametr = _itemAnimationEntityManager.GetAnimationProperty(item);
+
+            if(!string.IsNullOrEmpty(animationParametr))
+            {
+                _playerController.AnimationController.SetExtraction(isActive, animationParametr);
+            }
         }
     }
 }
