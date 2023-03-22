@@ -30,8 +30,12 @@ namespace PlayerInventory
             {
                 if (i < _inventory.Items.Count)
                 {
+                    if (_inventorySlots[i].Item == null)
+                    {
+                        _inventorySlots[i].OnInventorySelected += SelectInventory;
+                    }
+                    
                     _inventorySlots[i].AddItem(_inventory.Items[i]);
-                    _inventorySlots[i].OnInventorySelected += SelectInventory;
                 }
                 else
                 {

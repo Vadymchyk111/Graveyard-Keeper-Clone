@@ -1,30 +1,40 @@
-using Player;
 using UnityEngine;
 
-public class AnimationController : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private MoveByPhysicsController _moveByPhysicsController;
-    [SerializeField] private Animator _animator;
-
-    private readonly string _isMoving = "isRunning";
-
-    private void OnEnable()
+    public class AnimationController : MonoBehaviour
     {
-        _moveByPhysicsController.OnPlayerMove += SetAnimation;
-    }
+        [SerializeField] private MoveByPhysicsController _moveByPhysicsController;
+        [SerializeField] private PlayerExtractor _playerExtractor;
+        [SerializeField] private Animator _animator;
 
-    private void OnDisable()
-    {
-        _moveByPhysicsController.OnPlayerMove -= SetAnimation;
-    }
+        private readonly string _isMoving = "isRunning";
+        private readonly string _chopping = "Chopping";
 
-    //TODO rename to SetMove
-    private void SetAnimation(bool isMoving)
-    {
-        _animator.SetBool(_isMoving, isMoving);
-    }
+        private void OnEnable()
+        {
+            _moveByPhysicsController.OnPlayerMove += SetMove;
+            _playerExtractor.OnExtracting += SetChoppingTree;
+        }
 
-    //TODO add SetCut + switch animation layer
-    //TODO add SetDig + switch animation layer
-    //TODO add SetHollow + switch animation layer
+        private void OnDisable()
+        {
+            _moveByPhysicsController.OnPlayerMove -= SetMove;
+            _playerExtractor.OnExtracting += SetChoppingTree;
+        }
+        
+        private void SetMove(bool isMoving)
+        {
+            _animator.SetBool(_isMoving, isMoving);
+        }
+
+        private void SetChoppingTree()
+        {
+            _animator.SetTrigger(_chopping);
+        }
+
+        //TODO add SetCut + switch animation layer
+        //TODO add SetDig + switch animation layer
+        //TODO add SetHollow + switch animation layer
+    }
 }

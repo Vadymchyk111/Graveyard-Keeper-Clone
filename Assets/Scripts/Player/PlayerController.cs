@@ -1,30 +1,37 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Player;
+using Environment;
 using PlayerInventory;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private PlayerExtractor _playerExtractor;
-    [SerializeField] private PlayerCollector _playerCollector;
-
-    private void OnEnable()
+    public class PlayerController : MonoBehaviour
     {
-        _playerExtractor.OnExtracted += FillInventory;
-    }
+        [SerializeField] private PlayerExtractor _playerExtractor;
+        [SerializeField] private PlayerCollector _playerCollector;
+        [SerializeField] private PlayerInventory _playerInventory;
 
-    private void OnDisable()
-    {
-        _playerExtractor.OnExtracted -= FillInventory;
-    }
-
-    private void FillInventory(List<Item> items)
-    {
-        foreach (Item item in items)
+        private void OnEnable()
         {
-            _playerCollector.PickUp(item);
+            _playerExtractor.OnExtracted += FillInventory;
+        }
+
+        private void OnDisable()
+        {
+            _playerExtractor.OnExtracted -= FillInventory;
+        }
+
+        private void FillInventory(List<Item> items)
+        {
+            foreach (Item item in items)
+            {
+                _playerCollector.PickUp(item);
+            }
+        }
+
+        public bool CheckEquipedInstrument(IExtractable extractable)
+        {
+            return extractable.InstrumentToDestroy.Name == _playerInventory.CurrentInstrument.Name;
         }
     }
 }

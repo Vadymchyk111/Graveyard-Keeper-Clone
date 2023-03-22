@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Environment;
-using Environment.Tree;
 using PlayerInventory;
 using Resourses.Generall;
 using UnityEngine;
@@ -11,30 +10,43 @@ namespace Player
     public class PlayerExtractor : MonoBehaviour, IExtractor
     {
         public event Action<List<Item>> OnExtracted;
+        public event Action OnExtracting;
+
+        [SerializeField] private PlayerController _playerController;
 
         private IExtractable _extractableResourceController;
 
         public void StartExtract(IExtractable extractable)
         {
-            //TODO add check equiped axe
-            //if axe equiped start specific animation
-
-            if(extractable != null)
+            if (extractable == null)
             {
-                _extractableResourceController = extractable;
-                _extractableResourceController.OnExtracted += ExtractionCompleted;
+                return;
             }
+            
+            if (!_playerController.CheckEquipedInstrument(extractable))
+            {
+                return;
+            }
+            
+            OnExtracting?.Invoke();
+            _extractableResourceController = extractable;
+            _extractableResourceController.OnExtracted += ExtractionCompleted;
         }
 
         public void StopExtract()
         {
-            //TODO add check equiped axe
-            //if axe equiped stop animation
-            if (_extractableResourceController != null)
+            if (_extractableResourceController == null)
             {
-                _extractableResourceController.OnExtracted -= ExtractionCompleted;
-                _extractableResourceController = null;
+                return;
             }
+            
+            if (!_playerController.CheckEquipedInstrument(_extractableResourceController))
+            {
+                return;
+            }
+                
+            _extractableResourceController.OnExtracted -= ExtractionCompleted;
+            _extractableResourceController = null;
         }
 
         public void ExtractionCompleted(ResourceEntity[] resourceEntities)

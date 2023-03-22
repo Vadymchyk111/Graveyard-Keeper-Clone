@@ -7,9 +7,10 @@ namespace Resourses
 {
     public class Rock : MonoBehaviour, ICollectable
     {
+        public event Action<bool> OnCollected;
+        
         [SerializeField] private Item _item;
         
-        public event Action<bool> OnCollected;
         public bool IsCollected { get; set; }
         public Item Item
         {

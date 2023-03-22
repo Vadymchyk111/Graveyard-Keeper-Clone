@@ -7,10 +7,6 @@ namespace Resourses.Generall
     {
         [SerializeField] protected int _hitPoints;
 
-        public int HitPoints
-        {
-            get => _hitPoints;
-            set => _hitPoints = value;
-        }
+        public int HitPoints => _hitPoints;
     }
 }

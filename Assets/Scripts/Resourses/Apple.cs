@@ -8,8 +8,10 @@ namespace Resourses
 {
     public class Apple : MonoBehaviour, ICollectable, IEatable
     {
-        [SerializeField] private Item _item;
         public event Action<bool> OnCollected;
+        
+        [SerializeField] private Item _item;
+        
         public bool IsCollected { get; set; }
         public Item Item
         {

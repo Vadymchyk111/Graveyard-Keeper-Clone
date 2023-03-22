@@ -1,4 +1,6 @@
 using PlayerInventory;
+using Tools;
+using Tools.Generall;
 using UnityEngine;
 
 namespace Player
@@ -9,6 +11,9 @@ namespace Player
         [SerializeField] private ToolManager _toolManager;
 
         private Item _currentItem;
+        
+        public bool IsEquipedItem { get; set; }
+        public Item CurrentInstrument => _currentItem;
 
         private void OnEnable()
         {
@@ -20,8 +25,15 @@ namespace Player
             _inventory.OnUseItem -= AttachObject;
         }
 
-        public void AttachObject(Item item)
+        private void AttachObject(Item item)
         {
+            if (item == _currentItem)
+            {
+                DetachObject();
+                _currentItem = null;
+                return;
+            }
+            
             if(item == null)
             {
                 return;
@@ -32,10 +44,10 @@ namespace Player
             _currentItem = item;
 
             ITool tool = _toolManager.GetTool(item);
-            tool.Equip();
+            tool?.Equip();
         }
 
-        public void DetachObject()
+        private void DetachObject()
         {
             if (_currentItem == null)
             {
@@ -43,7 +55,7 @@ namespace Player
             }
 
             ITool tool = _toolManager.GetTool(_currentItem);
-            tool.UnEquip();
+            tool?.UnEquip();
         }
     }
 }

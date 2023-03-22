@@ -1,33 +1,37 @@
-using PlayerInventory;
-using UnityEngine;
 using System.Linq;
+using PlayerInventory;
+using Tools.Generall;
+using UnityEngine;
 
-public class ToolManager : MonoBehaviour, IToolManager
+namespace Tools
 {
-    [SerializeField] private Tool[] _tools;
-
-    void Start()
+    public class ToolManager : MonoBehaviour, IToolManager
     {
-        DeactivateAllTools();
-    }
+        [SerializeField] private Tool[] _tools;
 
-    public ITool GetTool(Item item)
-    {
-        ITool tool = null;
-
-        if(item != null && _tools!=null && _tools.Length > 0)
+        void Start()
         {
-            tool = _tools.FirstOrDefault(x => x.Id == item.name);
+            DeactivateAllTools();
         }
 
-        return tool;
-    }
-
-    private void DeactivateAllTools()
-    {
-        foreach(var tool in _tools)
+        public ITool GetTool(Item item)
         {
-            tool.UnEquip();
+            ITool tool = null;
+
+            if(item != null && _tools!=null && _tools.Length > 0)
+            {
+                tool = _tools.FirstOrDefault(x => x.Id == item.name);
+            }
+
+            return tool;
+        }
+
+        private void DeactivateAllTools()
+        {
+            foreach(var tool in _tools)
+            {
+                tool.UnEquip();
+            }
         }
     }
 }

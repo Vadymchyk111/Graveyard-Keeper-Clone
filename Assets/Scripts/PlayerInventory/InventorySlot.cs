@@ -13,6 +13,8 @@ namespace PlayerInventory
         [SerializeField] private Button _button;
 
         private Item _item;
+        
+        public Item Item => _item;
 
         private void OnEnable()
         {
@@ -28,7 +30,7 @@ namespace PlayerInventory
         {
             _item = item;
             
-            _icon.sprite = _item.icon;
+            _icon.sprite = _item.Icon;
             _icon.enabled = true;
         }
         

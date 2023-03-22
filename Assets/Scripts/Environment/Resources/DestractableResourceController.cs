@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using General;
+using PlayerInventory;
 using Resourses.Generall;
 using UnityEngine;
 
-namespace Environment.Tree
+namespace Environment.Resources
 {
     public class DestractableResourceController : MonoBehaviour, IExtractable
     {
@@ -12,12 +13,14 @@ namespace Environment.Tree
         
         [SerializeField] private DestructibleResourceHolderData _destructibleResourceHolderData;
         [SerializeField] private float _delayBeforeHitInSeconds;
+        [SerializeField] private Item _instrumentToDestroy;
         
         private Coroutine extracting;
         private WaitForSeconds _waitForSeconds;
         private int _hitPoints;
 
         public bool IsEmpty { get; set; }
+        public Item InstrumentToDestroy => _instrumentToDestroy;
 
         private void Start()
         {
@@ -34,7 +37,10 @@ namespace Environment.Tree
                 StopCoroutine(extracting);
             }
 
-            extracting = StartCoroutine(ExtractingCoroutine());
+            if (_hitPoints > 0)
+            {
+                extracting = StartCoroutine(ExtractingCoroutine());
+            }
         }
 
         public void StopExtracting(IExtractor extractor)

@@ -28,14 +28,14 @@ namespace Crafting.Recipy.UI
         private void AddItem(Item item)
         {
             _item = item;
-            _icon.sprite = _item.icon;
+            _icon.sprite = _item.Icon;
             _icon.enabled = true;
         }
 
         public void Init(RecipeData recipe)
         {
             _recipe = recipe;
-            AddItem(_recipe.item);
+            AddItem(_recipe.Item);
         }
 
         private void SendClickEvent()

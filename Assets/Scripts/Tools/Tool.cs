@@ -1,26 +1,30 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using PlayerInventory;
+using Tools.Generall;
 using UnityEngine;
 
-public class Tool : MonoBehaviour, ITool
+namespace Tools
 {
-    [SerializeField] private Item _item;
-    [SerializeField] private GameObject _toolBody;
-
-    public string Id => _item.name;
-    public bool IsEquiped { get; set; }
-
-    public event Action<bool> OnEquiped;
-
-    public void Equip()
+    public class Tool : MonoBehaviour, ITool
     {
-        _toolBody.SetActive(true);
-    }
+        public event Action<bool> OnEquipped;
+        
+        [SerializeField] private Item _item;
+        [SerializeField] private GameObject _toolBody;
 
-    public void UnEquip()
-    {
-        _toolBody.SetActive(false);
+        public string Id => _item.name;
+        public bool IsEquipped { get; set; }
+        
+        public void Equip()
+        {
+            _toolBody.SetActive(true);
+            OnEquipped?.Invoke(true);
+        }
+
+        public void UnEquip()
+        {
+            _toolBody.SetActive(false);
+            OnEquipped?.Invoke(false);
+        }
     }
 }

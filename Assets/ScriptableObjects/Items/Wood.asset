@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c66c14de43b4bcb95c9580c83e8c610, type: 3}
-  m_Name: Tree
+  m_Name: Wood
   m_EditorClassIdentifier: 
-  name: 
-  icon: {fileID: 0}
-  isDefault: 0
+  name: Wood
+  icon: {fileID: 21300000, guid: 5263f18e1fef8254c81394d1cfc99bfe, type: 3}

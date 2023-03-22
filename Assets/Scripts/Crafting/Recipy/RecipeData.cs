@@ -10,11 +10,11 @@ namespace Crafting.Recipy
     public class RecipeData : ScriptableObject
     {
         [SerializeField] private RecipeElement[] _recipeElements;
-        [SerializeField] private GameObject _craftedItem;
+        [SerializeField] private Item _item;
+
+        public Item Item => _item;
     
-        public Item item;
-    
-        public GameObject TryCraft(Inventory inventory)
+        public Item TryCraft(Inventory inventory)
         {
             if (inventory.Items == null || inventory.Items.Count == 0)
             {
@@ -44,7 +44,7 @@ namespace Crafting.Recipy
                 inventory.RemoveItem(itemToDelete);
             }
 
-            return _craftedItem;
+            return _item;
         }
     }
 }

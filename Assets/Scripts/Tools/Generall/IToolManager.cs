@@ -1,6 +1,9 @@
 using PlayerInventory;
 
-public interface IToolManager 
+namespace Tools.Generall
 {
-    ITool GetTool(Item item);
+    public interface IToolManager 
+    {
+        ITool GetTool(Item item);
+    }
 }

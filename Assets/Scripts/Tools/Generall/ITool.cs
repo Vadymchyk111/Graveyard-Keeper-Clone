@@ -1,12 +1,15 @@
 using System;
 
-public interface ITool
+namespace Tools.Generall
 {
-    public event Action<bool> OnEquiped;
+    public interface ITool
+    {
+        public event Action<bool> OnEquipped;
 
-    public string Id { get; }
-    public bool IsEquiped { get; set; }
+        public string Id { get; }
+        public bool IsEquipped { get; set; }
 
-    void Equip();
-    void UnEquip();
+        void Equip();
+        void UnEquip();
+    }
 }
