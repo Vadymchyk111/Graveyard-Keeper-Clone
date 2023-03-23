@@ -1,5 +1,6 @@
 using System;
 using PlayerInventory;
+using PlayerInventory.Item;
 using UnityEngine;
 using UnityEngine.UI;
 

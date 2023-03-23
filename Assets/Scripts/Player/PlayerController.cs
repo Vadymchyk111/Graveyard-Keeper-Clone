@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Environment;
 using PlayerInventory;
+using PlayerInventory.Item;
 using UnityEngine;
 
 namespace Player

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PlayerInventory;
+using PlayerInventory.Item;
 using Resourses.Generall;
 
 namespace Environment

@@ -1,6 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using Collectable;
+using PlayerInventory.Item;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,18 +9,19 @@ namespace PlayerInventory
 {
     public class Inventory : MonoBehaviour
     {
-        public event Action<Item> OnUseItem;
+        public event Action<Item.Item> OnUseItem;
         public event Action OnInventoryChanged;
 
         [SerializeField] private GameObject _inventoryPanel;
+        [SerializeField] private ItemEntityHolder _itemEntityHolder;
         
         private PlayerInputActionsAsset _playerInputActionsAsset;
-        private readonly List<Item> items = new();
+        private readonly List<Item.Item> items = new();
         
         public static Inventory instance;
 
         public bool IsActivated { get; set; }
-        public List<Item> Items => items;
+        public List<Item.Item> Items => items;
         public int InventorySize => items.Count;
 
         private void Awake()
@@ -27,6 +29,12 @@ namespace PlayerInventory
             instance = this;
             _playerInputActionsAsset = new PlayerInputActionsAsset();
             _inventoryPanel.SetActive(false);
+        }
+
+        private IEnumerator Start()
+        {
+            yield return new WaitForSeconds(2f);
+            Init();
         }
 
         private void OnEnable()
@@ -41,19 +49,19 @@ namespace PlayerInventory
             _playerInputActionsAsset.Player.OpenInventory.Disable();
         }
 
-        public void AddItem(Item item)
+        public void AddItem(Item.Item item)
         {
             items.Add(item);
             OnInventoryChanged?.Invoke();
         }
         
-        public void RemoveItem(Item item)
+        public void RemoveItem(Item.Item item)
         {
             items.Remove(item);
             OnInventoryChanged?.Invoke();
         }
 
-        public void UseItem(Item item)
+        public void UseItem(Item.Item item)
         {
             OnUseItem?.Invoke(item);
         }
@@ -62,6 +70,17 @@ namespace PlayerInventory
         {
             IsActivated = !IsActivated;
             _inventoryPanel.SetActive(IsActivated);
+        }
+
+        private void Init()
+        {
+            foreach (ItemEntity itemEntity in _itemEntityHolder.ItemEntities)
+            {
+                for (int i = 0; i < itemEntity.Count.Value.Value; i++)
+                {
+                    AddItem(itemEntity.Item);
+                }
+            }
         }
     }
 }

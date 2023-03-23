@@ -8,7 +8,7 @@ namespace PlayerInventory.ItemAnimation
     {
         [SerializeField] private ItemAnimationEntity[] _itemAnimationEntities;
 
-        public string GetAnimationProperty(Item item)
+        public string GetAnimationProperty(Item.Item item)
         {
             string findedAnimationProperty = string.Empty;
 

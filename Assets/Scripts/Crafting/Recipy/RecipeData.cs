@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Collectable;
 using PlayerInventory;
+using PlayerInventory.Item;
 using UnityEngine;
 
 namespace Crafting.Recipy

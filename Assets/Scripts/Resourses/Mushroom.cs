@@ -2,6 +2,7 @@ using System;
 using Collectable;
 using Eatable;
 using PlayerInventory;
+using PlayerInventory.Item;
 using UnityEngine;
 
 namespace Resourses

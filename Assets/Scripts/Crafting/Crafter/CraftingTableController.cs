@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Collectable;
 using Crafting.Recipy;
 using PlayerInventory;
+using PlayerInventory.Item;
 using UnityEngine;
 using static General.Contants;
 

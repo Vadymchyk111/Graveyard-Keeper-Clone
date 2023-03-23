@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Environment;
 using PlayerInventory;
+using PlayerInventory.Item;
 using PlayerInventory.ItemAnimation;
 using Resourses.Generall;
 using UnityEngine;

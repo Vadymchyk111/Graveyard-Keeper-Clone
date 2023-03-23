@@ -1,6 +1,7 @@
 using System;
 using Collectable;
 using PlayerInventory;
+using PlayerInventory.Item;
 using UnityEngine;
 
 namespace Resourses

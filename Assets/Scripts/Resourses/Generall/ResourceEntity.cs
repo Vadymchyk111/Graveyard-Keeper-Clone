@@ -1,4 +1,5 @@
 using PlayerInventory;
+using PlayerInventory.Item;
 using UnityEngine;
 
 namespace Resourses.Generall
