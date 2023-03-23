@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
+  _rockCounter: {fileID: 11400000, guid: 83409c20b828cc74e972e04001ff95d4, type: 2}
 --- !u!135 &264629716
 SphereCollider:
   m_ObjectHideFlags: 0

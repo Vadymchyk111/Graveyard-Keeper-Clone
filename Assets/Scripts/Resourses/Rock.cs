@@ -3,6 +3,7 @@ using Collectable;
 using PlayerInventory;
 using PlayerInventory.Item;
 using UnityEngine;
+using Values.ScriptableObjects;
 
 namespace Resourses
 {
@@ -11,6 +12,7 @@ namespace Resourses
         public event Action<bool> OnCollected;
         
         [SerializeField] private Item _item;
+        [SerializeField] private ScriptableObjectInt _rockCounter;
         
         public bool IsCollected { get; set; }
         public Item Item
@@ -21,6 +23,7 @@ namespace Resourses
 
         public void DoCollect()
         {
+            _rockCounter.ChangeValue(_rockCounter.Value.Value + 1, true);
             SetCollected(true);
             Destroy(gameObject);
         }
