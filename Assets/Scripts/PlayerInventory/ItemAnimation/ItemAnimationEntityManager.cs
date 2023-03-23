@@ -1,21 +1,23 @@
-using PlayerInventory;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "ItemAnimationEntityManager", menuName = "Item/ItemAnimationEntityManager")]
-public class ItemAnimationEntityManager : ScriptableObject
+namespace PlayerInventory.ItemAnimation
 {
-    [SerializeField] private ItemAnimationEntity[] _itemAnimationEntities;
-
-    public string GetAnimationProperty(Item item)
+    [CreateAssetMenu(fileName = "ItemAnimationEntityManager", menuName = "Item/ItemAnimationEntityManager")]
+    public class ItemAnimationEntityManager : ScriptableObject
     {
-        string findedAnimationProperty = string.Empty;
+        [SerializeField] private ItemAnimationEntity[] _itemAnimationEntities;
 
-        if(item != null && _itemAnimationEntities != null && _itemAnimationEntities.Length > 0)
+        public string GetAnimationProperty(Item item)
         {
-            findedAnimationProperty = _itemAnimationEntities.FirstOrDefault(x => x.ItemToLaunchAnimation == item).AnimationParametr;
-        }
+            string findedAnimationProperty = string.Empty;
 
-        return findedAnimationProperty;
+            if(item != null && _itemAnimationEntities is { Length: > 0 })
+            {
+                findedAnimationProperty = _itemAnimationEntities.FirstOrDefault(x => x.ItemToLaunchAnimation == item)?.AnimationParameter;
+            }
+
+            return findedAnimationProperty;
+        }
     }
 }

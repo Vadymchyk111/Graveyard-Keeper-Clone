@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc9cffa90c4c496dba32226830deef0, type: 3}
-  m_Name: ItemAnimationEntityManager
+  m_Script: {fileID: 11500000, guid: 31d40c20a34be44409f6fc1bb538125b, type: 3}
+  m_Name: BigRockDestructableResourceHolder
   m_EditorClassIdentifier: 
-  _itemAnimationEntities:
-  - _itemToLaunchAnimation: {fileID: 11400000, guid: 039f2ff57540a8d4fbd4acbf952559bc,
-      type: 2}
-    _animationParameter: isChopping
+  _resourceEntities:
+  - _resourceData: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
+    _count: 2
+  _hitPoints: 3

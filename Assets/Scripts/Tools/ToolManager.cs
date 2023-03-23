@@ -18,7 +18,7 @@ namespace Tools
         {
             ITool tool = null;
 
-            if(item != null && _tools!=null && _tools.Length > 0)
+            if(item != null && _tools is { Length: > 0 })
             {
                 tool = _tools.FirstOrDefault(x => x.Id == item.name);
             }

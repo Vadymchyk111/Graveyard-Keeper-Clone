@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using PlayerInventory;
 using UnityEngine;
 
-[System.Serializable]
-public class ItemAnimationEntity
+namespace PlayerInventory.ItemAnimation
 {
-    [SerializeField] private Item _itemToLaunchAnimation;
-    [SerializeField] private string _animationParametr;
+    [System.Serializable]
+    public class ItemAnimationEntity
+    {
+        [SerializeField] private Item _itemToLaunchAnimation;
+        [SerializeField] private string _animationParameter;
 
-    public Item ItemToLaunchAnimation => _itemToLaunchAnimation;
-    public string AnimationParametr => _animationParametr;
+        public Item ItemToLaunchAnimation => _itemToLaunchAnimation;
+        public string AnimationParameter => _animationParameter;
+    }
 }

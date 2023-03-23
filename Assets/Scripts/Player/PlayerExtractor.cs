@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Environment;
 using PlayerInventory;
+using PlayerInventory.ItemAnimation;
 using Resourses.Generall;
 using UnityEngine;
 
@@ -31,7 +32,7 @@ namespace Player
             _extractableResourceController = extractable;
             _extractableResourceController.OnExtracted += ExtractionCompleted;
 
-            SetActiveExtrationAnimation(true, _extractableResourceController.Tool);
+            SetActiveExtractionAnimation(true, _extractableResourceController.Tool);
         }
 
         public void StopExtract()
@@ -47,7 +48,7 @@ namespace Player
             }
                 
             _extractableResourceController.OnExtracted -= ExtractionCompleted;
-            SetActiveExtrationAnimation(false, _extractableResourceController.Tool);
+            SetActiveExtractionAnimation(false, _extractableResourceController.Tool);
             _extractableResourceController = null;
         }
 
@@ -67,13 +68,13 @@ namespace Player
             StopExtract();
         }
 
-        private void SetActiveExtrationAnimation(bool isActive, Item item)
+        private void SetActiveExtractionAnimation(bool isActive, Item item)
         {
-            string animationParametr = _itemAnimationEntityManager.GetAnimationProperty(item);
+            string animationParameter = _itemAnimationEntityManager.GetAnimationProperty(item);
 
-            if(!string.IsNullOrEmpty(animationParametr))
+            if(!string.IsNullOrEmpty(animationParameter))
             {
-                _playerController.AnimationController.SetExtraction(isActive, animationParametr);
+                _playerController.AnimationController.SetExtraction(isActive, animationParameter);
             }
         }
     }
