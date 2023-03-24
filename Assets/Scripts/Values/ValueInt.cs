@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Values
 {
     [System.Serializable]
-    public struct ValueInt
+    public class ValueInt
     {
         [SerializeField] private string _name;
         [SerializeField] private int _value;

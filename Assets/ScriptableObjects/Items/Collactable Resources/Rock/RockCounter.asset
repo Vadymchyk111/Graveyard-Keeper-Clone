@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value:
     _name: RockCounter
-    _value: 3
+    _value: 7
   _minValue:
     _name: RockCounterMin
     _value: 0

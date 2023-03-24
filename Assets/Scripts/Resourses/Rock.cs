@@ -21,9 +21,14 @@ namespace Resourses
             set => _item = value;
         }
 
+        /*private void Awake()
+        {
+            _rockCounter.ChangeValue(0, true);
+        }*/
+
         public void DoCollect()
         {
-            _rockCounter.ChangeValue(_rockCounter.Value.Value + 1, true);
+            _rockCounter.ChangeValue(_rockCounter.Value.RestoreValue() + 1, true);
             SetCollected(true);
             Destroy(gameObject);
         }

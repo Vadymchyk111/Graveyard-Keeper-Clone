@@ -44,9 +44,9 @@ namespace Values.ScriptableObjects
             ChangeValue(_maxValue, newMaxValue, isSendEvent);
         }
 
-        private void ChangeValue(ValueInt _value, int newValue, bool isSendEvent = false)
+        private void ChangeValue(ValueInt value, int newValue, bool isSendEvent = false)
         {
-            _value.ChangeValue(newValue);
+            value.ChangeValue(newValue);
 
             SendValueChangeEvent(isSendEvent);
         }

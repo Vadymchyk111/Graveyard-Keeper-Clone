@@ -76,7 +76,7 @@ namespace PlayerInventory
         {
             foreach (ItemEntity itemEntity in _itemEntityHolder.ItemEntities)
             {
-                for (int i = 0; i < itemEntity.Count.Value.Value; i++)
+                for (int i = 0; i < itemEntity.Count.Value.RestoreValue(); i++)
                 {
                     AddItem(itemEntity.Item);
                 }
