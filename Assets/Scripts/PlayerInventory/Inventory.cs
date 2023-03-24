@@ -31,12 +31,6 @@ namespace PlayerInventory
             _inventoryPanel.SetActive(false);
         }
 
-        private IEnumerator Start()
-        {
-            yield return new WaitForSeconds(2f);
-            Init();
-        }
-
         private void OnEnable()
         {
             _playerInputActionsAsset.Player.OpenInventory.performed += SetActiveCraftingPanel;
@@ -84,7 +78,7 @@ namespace PlayerInventory
             _inventoryPanel.SetActive(IsActivated);
         }
 
-        private void Init()
+        public void Init(Action<Inventory> onInited)
         {
             foreach (ItemEntity itemEntity in _itemEntityHolder.ItemEntities)
             {
@@ -93,6 +87,8 @@ namespace PlayerInventory
                     AddItem(itemEntity.Item, false);
                 }
             }
+            
+            onInited?.Invoke(this);
         }
     }
 }

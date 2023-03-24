@@ -1,3 +1,4 @@
+using System;
 using PlayerInventory;
 using PlayerInventory.Item;
 using Tools;
@@ -9,6 +10,7 @@ namespace Player
     public class PlayerInventory : MonoBehaviour
     {
         [SerializeField] private Inventory _inventory;
+        [SerializeField] private InventoryUI _inventoryUI;
         [SerializeField] private ToolManager _toolManager;
 
         private Item _currentItem;
@@ -24,6 +26,11 @@ namespace Player
         private void OnDisable()
         {
             _inventory.OnUseItem -= AttachObject;
+        }
+
+        private void Start()
+        {
+            _inventory.Init(_inventoryUI.Init);
         }
 
         private void AttachObject(Item item)

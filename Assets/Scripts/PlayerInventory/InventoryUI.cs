@@ -7,13 +7,7 @@ namespace PlayerInventory
         [SerializeField] private InventorySlot[] _inventorySlots; 
             
         private Inventory _inventory;
-
-        private void Start()
-        {
-            _inventory = Inventory.instance;
-            _inventory.OnInventoryChanged += UpdateUI;
-        }
-
+        
         private void OnDestroy()
         {
             _inventory.OnInventoryChanged -= UpdateUI;
@@ -48,6 +42,13 @@ namespace PlayerInventory
         private void SelectInventory(Item.Item item)
         {
             _inventory.UseItem(item);
+        }
+
+        public void Init(Inventory inventory)
+        {
+            _inventory = inventory;
+            UpdateUI();
+            _inventory.OnInventoryChanged += UpdateUI;
         }
     }
 }
