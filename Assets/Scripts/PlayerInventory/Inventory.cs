@@ -49,15 +49,27 @@ namespace PlayerInventory
             _playerInputActionsAsset.Player.OpenInventory.Disable();
         }
 
-        public void AddItem(Item.Item item)
+        public void AddItem(Item.Item item, bool impactOnSaves = true)
         {
             items.Add(item);
+            
+            if (impactOnSaves)
+            {
+                _itemEntityHolder.AddItems(item, 1);
+            }
+            
             OnInventoryChanged?.Invoke();
         }
         
-        public void RemoveItem(Item.Item item)
+        public void RemoveItem(Item.Item item, bool impactOnSaves = true)
         {
             items.Remove(item);
+            
+            if (impactOnSaves)
+            {
+                _itemEntityHolder.RemoveItems(item, 1);
+            }
+            
             OnInventoryChanged?.Invoke();
         }
 
@@ -78,7 +90,7 @@ namespace PlayerInventory
             {
                 for (int i = 0; i < itemEntity.Count.Value.RestoreValue(); i++)
                 {
-                    AddItem(itemEntity.Item);
+                    AddItem(itemEntity.Item, false);
                 }
             }
         }

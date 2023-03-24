@@ -12,23 +12,16 @@ namespace Resourses
         public event Action<bool> OnCollected;
         
         [SerializeField] private Item _item;
-        [SerializeField] private ScriptableObjectInt _rockCounter;
-        
+
         public bool IsCollected { get; set; }
         public Item Item
         {
             get => _item;
             set => _item = value;
         }
-
-        /*private void Awake()
-        {
-            _rockCounter.ChangeValue(0, true);
-        }*/
-
+        
         public void DoCollect()
         {
-            _rockCounter.ChangeValue(_rockCounter.Value.RestoreValue() + 1, true);
             SetCollected(true);
             Destroy(gameObject);
         }
