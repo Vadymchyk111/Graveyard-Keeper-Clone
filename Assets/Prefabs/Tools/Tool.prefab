@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7684050784919291031}
   - component: {fileID: 4202076480897607505}
   m_Layer: 0
-  m_Name: AxeTool
+  m_Name: Tool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b78a6b6b1b432db509c8be6fea6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _item: {fileID: 11400000, guid: 039f2ff57540a8d4fbd4acbf952559bc, type: 2}
+  _item: {fileID: 0}
   _toolBody: {fileID: 0}
 --- !u!1001 &8655659739017078277
 PrefabInstance:

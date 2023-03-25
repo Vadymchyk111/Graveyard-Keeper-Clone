@@ -15,3 +15,13 @@ MonoBehaviour:
   _itemEntities:
   - _item: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
     _count: {fileID: 11400000, guid: 83409c20b828cc74e972e04001ff95d4, type: 2}
+  - _item: {fileID: 11400000, guid: 039f2ff57540a8d4fbd4acbf952559bc, type: 2}
+    _count: {fileID: 11400000, guid: 80f375aae991b124c8c282893d324e15, type: 2}
+  - _item: {fileID: 11400000, guid: 2035620323d24234aad523d60d5c11c3, type: 2}
+    _count: {fileID: 11400000, guid: 161ad8521f1a60442a834f1f6a217100, type: 2}
+  - _item: {fileID: 11400000, guid: d71118938fe232444a7134e0e79c54c5, type: 2}
+    _count: {fileID: 11400000, guid: fcd339cbf225c58409fb6a76e58abac4, type: 2}
+  - _item: {fileID: 11400000, guid: f42ceed72f3da41fcb17a7b02a47cd9c, type: 2}
+    _count: {fileID: 11400000, guid: b4c3de865364ff24581b934fcfdfda61, type: 2}
+  - _item: {fileID: 11400000, guid: c668487c4cdfc6f459b9fa3b722a975b, type: 2}
+    _count: {fileID: 11400000, guid: 56221d268bcb33a4da8166747fec0ece, type: 2}

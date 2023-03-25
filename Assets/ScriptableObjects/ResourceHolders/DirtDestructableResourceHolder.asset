@@ -9,15 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d177ab02f25a194dbf2beed8d672686, type: 3}
-  m_Name: RockCounter
+  m_Script: {fileID: 11500000, guid: 31d40c20a34be44409f6fc1bb538125b, type: 3}
+  m_Name: DirtDestructableResourceHolder
   m_EditorClassIdentifier: 
-  _value:
-    _name: RockCounter
-    _value: 8
-  _minValue:
-    _name: RockCounterMin
-    _value: 0
-  _maxValue:
-    _name: RockCounterMin
-    _value: 16
+  _resourceEntities:
+  - _resourceData: {fileID: 11400000, guid: c668487c4cdfc6f459b9fa3b722a975b, type: 2}
+    _count: 5
+  _hitPoints: 5

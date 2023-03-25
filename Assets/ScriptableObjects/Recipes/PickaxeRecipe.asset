@@ -9,15 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d177ab02f25a194dbf2beed8d672686, type: 3}
-  m_Name: RockCounter
+  m_Script: {fileID: 11500000, guid: 749c5eeb75374bd4682927aa67ac6d01, type: 3}
+  m_Name: PickaxeRecipe
   m_EditorClassIdentifier: 
-  _value:
-    _name: RockCounter
-    _value: 8
-  _minValue:
-    _name: RockCounterMin
-    _value: 0
-  _maxValue:
-    _name: RockCounterMin
-    _value: 16
+  _recipeElements:
+  - _item: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
+    _itemCount: 1
+  _item: {fileID: 11400000, guid: 2035620323d24234aad523d60d5c11c3, type: 2}
