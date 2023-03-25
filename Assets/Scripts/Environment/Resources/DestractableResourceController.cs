@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Extractable;
 using General;
 using PlayerInventory;
 using PlayerInventory.Item;

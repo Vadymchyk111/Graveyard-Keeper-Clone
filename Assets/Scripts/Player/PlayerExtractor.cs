@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Environment;
+using Extractable;
 using PlayerInventory;
 using PlayerInventory.Item;
 using PlayerInventory.ItemAnimation;
