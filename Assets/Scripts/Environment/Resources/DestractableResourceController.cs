@@ -63,6 +63,7 @@ namespace Environment.Resources
             }
 
             OnExtracted?.Invoke(_destructibleResourceHolderData.ResourceEntities);
+            Destroy(gameObject);
         }
 
         private void OnTriggerEnter(Collider other)

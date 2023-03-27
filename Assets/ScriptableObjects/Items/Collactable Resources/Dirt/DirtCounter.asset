@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value:
     _name: DirtCounter
-    _value: 5
+    _value: 0
   _minValue:
     _name: MinDirtCounter
     _value: 0
