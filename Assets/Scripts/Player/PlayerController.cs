@@ -11,6 +11,7 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private PlayerStats _playerStats;
+        [SerializeField] private PlayerEat _playerEat;
         [SerializeField] private PlayerExtractor _playerExtractor;
         [SerializeField] private PlayerCollector _playerCollector;
         [SerializeField] private PlayerInventory _playerInventory;
@@ -21,6 +22,7 @@ namespace Player
 
         private void OnEnable()
         {
+            _playerEat.OnRecoveryStarve += RecoveryStarve;
             _playerStats.OnDied += OnDied;
             _playerExtractor.OnExtracted += FillInventory;
             _moveByPhysicsController.OnPlayerMove += SetActiveMove;
@@ -28,6 +30,7 @@ namespace Player
 
         private void OnDisable()
         {
+            _playerEat.OnRecoveryStarve -= RecoveryStarve;
             _playerStats.OnDied -= OnDied;
             _playerExtractor.OnExtracted -= FillInventory;
             _moveByPhysicsController.OnPlayerMove -= SetActiveMove;
@@ -55,6 +58,11 @@ namespace Player
         private void OnDied()
         {
             SceneManager.LoadScene(0);
+        }
+
+        private void RecoveryStarve(float recoveryValue)
+        {
+            _playerStats.RecoveryStarve(recoveryValue);
         }
     }
 }

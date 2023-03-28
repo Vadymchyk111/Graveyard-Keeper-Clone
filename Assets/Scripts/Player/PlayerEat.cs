@@ -1,34 +1,38 @@
 using System;
 using Collectable;
 using Eatable;
+using PlayerInventory;
+using PlayerInventory.Item;
 using UnityEngine;
 
 namespace Player
 {
-    public class PlayerEat : MonoBehaviour, IEater
+    public class PlayerEat : MonoBehaviour
     {
-        private IEatable _eatable;
-        public void Eat(IEatable eatable)
+        public event Action<float> OnRecoveryStarve;
+        [SerializeField] private Inventory _inventory;
+
+        private void OnEnable()
         {
-            eatable.DoEating(() => _eatable = null);
+            _inventory.OnUseItem += TryToEat;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnDisable()
         {
-            _eatable = other.gameObject.GetComponent<IEatable>();
+            _inventory.OnUseItem -= TryToEat;
         }
 
-        private void OnTriggerStay(Collider other)
+        private void TryToEat(Item item)
         {
-            if (_eatable != null && Input.GetKeyDown(KeyCode.F))
+            EatableItem eatableItem = item as EatableItem;
+
+            if (eatableItem == null)
             {
-                Eat(_eatable);
+                return;
             }
-        }
 
-        private void OnTriggerExit(Collider other)
-        {
-            _eatable = null;
+            OnRecoveryStarve?.Invoke(eatableItem.StarveRecoveryPoints);
+            _inventory.RemoveItem(item);
         }
     }
 }

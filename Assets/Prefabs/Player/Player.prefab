@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52815f689f2494ea0cce05e9f88e751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 727435679}
 --- !u!114 &727435679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerStats: {fileID: 1701490371315993171}
+  _playerEat: {fileID: 801148511}
   _playerExtractor: {fileID: 727435686}
   _playerCollector: {fileID: 801148505}
   _playerInventory: {fileID: 4697012564552114081}

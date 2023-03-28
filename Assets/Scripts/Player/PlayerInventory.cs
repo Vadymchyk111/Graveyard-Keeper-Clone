@@ -52,7 +52,13 @@ namespace Player
             _currentItem = item;
 
             ITool tool = _toolManager.GetTool(item);
-            tool?.Equip();
+
+            if(tool == null)
+            {
+                return;
+            }
+
+            tool.Equip();
         }
 
         private void DetachObject()
@@ -63,7 +69,13 @@ namespace Player
             }
 
             ITool tool = _toolManager.GetTool(_currentItem);
-            tool?.UnEquip();
+
+            if (tool == null)
+            {
+                return;
+            }
+
+            tool.UnEquip();
         }
     }
 }

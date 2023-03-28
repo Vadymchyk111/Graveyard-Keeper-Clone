@@ -20,12 +20,12 @@ public class StarveSliderController : MonoBehaviour
         _starveUpdateTickInSecondsDelay = new WaitForSeconds(_starveUpdateTickInSeconds);
     }
 
-    public void FullDecreaseStarve()
+    public void FullRecoveryStarve()
     {
-        DecreaseStarve(1);
+        RecoveryStarve(1);
     }
 
-    public void DecreaseStarve(float value)
+    public void RecoveryStarve(float value)
     {
         _slider.value += value;
     }

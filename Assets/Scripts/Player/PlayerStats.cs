@@ -24,6 +24,11 @@ public class PlayerStats : MonoBehaviour
         _starveSliderController.OnStarveIsZero -= DoDied;
     }
 
+    public void RecoveryStarve(float starveValue)
+    {
+        _starveSliderController.RecoveryStarve(starveValue);
+    }
+
     private void DoDied()
     {
         OnDied?.Invoke();

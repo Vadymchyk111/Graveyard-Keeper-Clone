@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Resourses
 {
-    public class Apple : MonoBehaviour, ICollectable, IEatable
+    public class Apple : MonoBehaviour, ICollectable
     {
         public event Action<bool> OnCollected;
         
@@ -29,17 +29,12 @@ namespace Resourses
         {
             SetCollected(false);
         }
-        
-        public void DoEating(Action onEatingCompleted)
-        {
-            onEatingCompleted?.Invoke();
-            Destroy(gameObject);
-        }
 
         private void SetCollected(bool isCollected)
         {
             IsCollected = isCollected;
             OnCollected?.Invoke(isCollected);
+            Destroy(gameObject);
         }
     }
 }
