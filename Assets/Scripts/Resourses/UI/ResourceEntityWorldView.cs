@@ -12,7 +12,7 @@ namespace Resourses.UI
         public void Init(ResourceEntity resourceEntity)
         {
             _renderer.sprite = resourceEntity.ResourceData.Icon;
-            _textMesh.text = $"{resourceEntity.ResourceData.Name}: {resourceEntity.Count}";
+            _textMesh.text = $"{resourceEntity.ResourceData.Name}: {resourceEntity.ItemCount}";
         }
     }
 }

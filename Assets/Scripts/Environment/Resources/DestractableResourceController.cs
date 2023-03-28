@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using Extractable;
 using General;
-using PlayerInventory;
 using PlayerInventory.Item;
 using Resourses.Generall;
 using UnityEngine;
@@ -32,8 +31,11 @@ namespace Environment.Resources
 
         public void StartExtracting(IExtractor extractor)
         {
-            extractor.StartExtract(this);
-
+            if (!extractor.StartExtract(this))
+            {
+                return;
+            }
+            
             if (extracting != null)
             {
                 StopCoroutine(extracting);

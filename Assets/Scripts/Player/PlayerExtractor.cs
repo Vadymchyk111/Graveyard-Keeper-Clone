@@ -19,22 +19,24 @@ namespace Player
 
         private IExtractable _extractableResourceController;
 
-        public void StartExtract(IExtractable extractable)
+        public bool StartExtract(IExtractable extractable)
         {
             if (extractable == null)
             {
-                return;
+                return false;
             }
             
             if (!_playerController.CheckEquipedInstrument(extractable))
             {
-                return;
+                return false;
             }
 
             _extractableResourceController = extractable;
             _extractableResourceController.OnExtracted += ExtractionCompleted;
 
             SetActiveExtractionAnimation(true, _extractableResourceController.Tool);
+
+            return true;
         }
 
         public void StopExtract()
@@ -60,7 +62,7 @@ namespace Player
         
             foreach (ResourceEntity resourceEntity in resourceEntities)
             {
-                for (int i = 0; i < resourceEntity.Count; i++)
+                for (int i = 0; i < resourceEntity.ItemCount; i++)
                 {
                     items.Add(resourceEntity.ResourceData);
                 }

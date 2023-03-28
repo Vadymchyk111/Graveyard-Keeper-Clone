@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using Collectable;
 using PlayerInventory;
 using PlayerInventory.Item;
+using Resourses.Generall;
 using UnityEngine;
 
 namespace Crafting.Recipy
@@ -10,7 +10,7 @@ namespace Crafting.Recipy
     [CreateAssetMenu(fileName = "RecipeData", menuName = "Recipe/NewRecipe")]
     public class RecipeData : ScriptableObject
     {
-        [SerializeField] private RecipeElement[] _recipeElements;
+        [SerializeField] private ResourceEntity[] _recipeElements;
         [SerializeField] private Item _item;
 
         public Item Item => _item;
@@ -24,9 +24,9 @@ namespace Crafting.Recipy
 
             List<Item> itemsToDelete = new();
         
-            foreach (RecipeElement recipeElement in _recipeElements)
+            foreach (ResourceEntity recipeElement in _recipeElements)
             {
-                List<Item> neededItems = inventory.Items.Where(x => x.name == recipeElement.Item.name).ToList();
+                List<Item> neededItems = inventory.Items.Where(x => x.name == recipeElement.ResourceData.Name).ToList();
             
                 if (neededItems.Count < recipeElement.ItemCount)
                 {

@@ -9,7 +9,7 @@ namespace ItemReceiver
     public interface IItemReceiver
     {
         event Action<bool> OnReceived;
-        ResourceEntity[] ResourceEntities { get; }
+        ResourceHolderData ResourceHolderData { get; }
         
         bool ReceiveItems(Inventory inventory);
     }

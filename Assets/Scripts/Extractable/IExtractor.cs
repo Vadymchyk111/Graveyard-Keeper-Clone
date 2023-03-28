@@ -9,7 +9,7 @@ namespace Extractable
     {
         event Action<List<Item>> OnExtracted;
 
-        void StartExtract(IExtractable extractable);
+        bool StartExtract(IExtractable extractable);
         void StopExtract();
         void ExtractionCompleted(ResourceEntity[] resourceEntities);
     }
