@@ -15,6 +15,4 @@ MonoBehaviour:
   _recipeElements:
   - _resourceData: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
     _itemCount: 1
-  - _resourceData: {fileID: 11400000, guid: f42ceed72f3da41fcb17a7b02a47cd9c, type: 2}
-    _itemCount: 1
   _item: {fileID: 11400000, guid: d71118938fe232444a7134e0e79c54c5, type: 2}
