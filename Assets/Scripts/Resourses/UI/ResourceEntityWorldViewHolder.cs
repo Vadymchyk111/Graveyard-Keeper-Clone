@@ -1,4 +1,4 @@
-using System;
+using ReceiverObjects;
 using Resourses.Generall;
 using UnityEngine;
 
@@ -8,10 +8,21 @@ namespace Resourses.UI
     {
         [SerializeField] private ResourceHolderData _holderData;
         [SerializeField] private ResourceEntityWorldView[] _resourceEntities;
+        [SerializeField] private ReceiverBase _receiverBase;
 
         private void Awake()
         {
             Init();
+        }
+
+        private void OnEnable()
+        {
+            _receiverBase.OnReceived += SetActive;
+        }
+
+        private void OnDisable()
+        {
+            _receiverBase.OnReceived -= SetActive;
         }
 
         private void Init()
@@ -20,6 +31,11 @@ namespace Resourses.UI
             {
                 _resourceEntities[i].Init(_holderData.ResourceEntities[i]);
             }
+        }
+
+        private void SetActive(bool isReceived)
+        {
+            gameObject.SetActive(!isReceived);
         }
     }
 }

@@ -8,9 +8,9 @@ namespace Resourses.Generall
     public class ResourceEntity
     {
         [SerializeField] private Item _resourceData;
-        [SerializeField] private int _count;
+        [SerializeField] private int _itemCount;
 
         public Item ResourceData => _resourceData;
-        public int Count => _count;
+        public int ItemCount => _itemCount;
     }
 }

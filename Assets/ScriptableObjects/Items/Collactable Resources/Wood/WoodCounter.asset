@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value:
     _name: WoodCounter
-    _value: 0
+    _value: 2
   _minValue:
     _name: MinWoodCounter
     _value: 0

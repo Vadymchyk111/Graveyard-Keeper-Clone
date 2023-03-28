@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceEntities:
   - _resourceData: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
-    _count: 2
+    _itemCount: 2
   - _resourceData: {fileID: 11400000, guid: f42ceed72f3da41fcb17a7b02a47cd9c, type: 2}
-    _count: 2
+    _itemCount: 2

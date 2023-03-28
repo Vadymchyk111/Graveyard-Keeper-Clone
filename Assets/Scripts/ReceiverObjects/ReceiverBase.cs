@@ -13,9 +13,9 @@ namespace ReceiverObjects
     {
         public event Action<bool> OnReceived;
 
-        [SerializeField] private ResourceEntity[] _resourceEntities;
-        
-        public ResourceEntity[] ResourceEntities => _resourceEntities;
+        [SerializeField] private ResourceHolderData _resourceHolder;
+
+        public ResourceHolderData ResourceHolderData => _resourceHolder;
         
         public bool ReceiveItems(Inventory inventory)
         {
@@ -26,17 +26,17 @@ namespace ReceiverObjects
 
             List<Item> itemsToDelete = new();
         
-            foreach (ResourceEntity resourceEntity in ResourceEntities)
+            foreach (ResourceEntity resourceEntity in ResourceHolderData.ResourceEntities)
             {
                 List<Item> neededItems = inventory.Items.Where(x => x.name == resourceEntity.ResourceData.name).ToList();
             
-                if (neededItems.Count < resourceEntity.Count)
+                if (neededItems.Count < resourceEntity.ItemCount)
                 {
                     itemsToDelete.Clear();
                     return false;
                 }
 
-                for (int i = 0; i < resourceEntity.Count; i++)
+                for (int i = 0; i < resourceEntity.ItemCount; i++)
                 {
                     itemsToDelete.Add(neededItems[i]);
                 }

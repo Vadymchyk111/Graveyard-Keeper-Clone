@@ -31,7 +31,8 @@ namespace Player
 
         public bool CheckEquipedInstrument(IExtractable extractable)
         {
-            return extractable.Tool.Name == _playerInventory.CurrentInstrument.Name;
+            return _playerInventory.CurrentInstrument is not null && 
+                   extractable.Tool.Name == _playerInventory.CurrentInstrument.Name;
         }
 
         private void FillInventory(List<Item> items)

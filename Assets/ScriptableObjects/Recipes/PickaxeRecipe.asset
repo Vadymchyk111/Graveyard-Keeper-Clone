@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PickaxeRecipe
   m_EditorClassIdentifier: 
   _recipeElements:
-  - _item: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
+  - _resourceData: {fileID: 11400000, guid: b0da3e2bf96a77c458dcff7d149dfd03, type: 2}
     _itemCount: 1
   _item: {fileID: 11400000, guid: 2035620323d24234aad523d60d5c11c3, type: 2}
