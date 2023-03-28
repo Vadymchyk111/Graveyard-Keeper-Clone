@@ -4,11 +4,13 @@ using Extractable;
 using PlayerInventory;
 using PlayerInventory.Item;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private PlayerStats _playerStats;
         [SerializeField] private PlayerExtractor _playerExtractor;
         [SerializeField] private PlayerCollector _playerCollector;
         [SerializeField] private PlayerInventory _playerInventory;
@@ -19,12 +21,14 @@ namespace Player
 
         private void OnEnable()
         {
+            _playerStats.OnDied += OnDied;
             _playerExtractor.OnExtracted += FillInventory;
             _moveByPhysicsController.OnPlayerMove += SetActiveMove;
         }
 
         private void OnDisable()
         {
+            _playerStats.OnDied -= OnDied;
             _playerExtractor.OnExtracted -= FillInventory;
             _moveByPhysicsController.OnPlayerMove -= SetActiveMove;
         }
@@ -46,6 +50,11 @@ namespace Player
         private void SetActiveMove(bool isActive)
         {
             _animationController.SetMove(isActive);
+        }
+
+        private void OnDied()
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
