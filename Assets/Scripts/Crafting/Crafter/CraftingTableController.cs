@@ -71,6 +71,7 @@ namespace Crafting.Crafter
 
             _inventory = other.GetComponent<PlayerController>().Inventory;
             IsActivated = true;
+            _inventory.SetActiveInventory(IsActivated);
             SetActiveCraftingPanel(IsActivated);
         }
 
@@ -82,6 +83,7 @@ namespace Crafting.Crafter
             }
         
             IsActivated = false;
+            _inventory.SetActiveInventory(IsActivated);
             SetActiveCraftingPanel(IsActivated);
         }
     }

@@ -30,13 +30,13 @@ namespace PlayerInventory
 
         private void OnEnable()
         {
-            _playerInputActionsAsset.Player.OpenInventory.performed += SetActiveCraftingPanel;
+            _playerInputActionsAsset.Player.OpenInventory.performed += SwichActiveInventory;
             _playerInputActionsAsset.Player.OpenInventory.Enable();
         }
 
         private void OnDisable()
         {
-            _playerInputActionsAsset.Player.OpenInventory.performed -= SetActiveCraftingPanel;
+            _playerInputActionsAsset.Player.OpenInventory.performed -= SwichActiveInventory;
             _playerInputActionsAsset.Player.OpenInventory.Disable();
         }
 
@@ -69,12 +69,12 @@ namespace PlayerInventory
             OnUseItem?.Invoke(item);
         }
 
-        private void SetActiveCraftingPanel(InputAction.CallbackContext context)
+        public void SetActiveInventory(bool isActive)
         {
-            IsActivated = !IsActivated;
-            _inventoryPanel.SetActive(IsActivated);
+            IsActivated = isActive;
+            _inventoryPanel.SetActive(isActive);
         }
-
+        
         public void Init(Action<Inventory> onInited)
         {
             foreach (ItemEntity itemEntity in _itemEntityHolder.ItemEntities)
@@ -86,6 +86,12 @@ namespace PlayerInventory
             }
             
             onInited?.Invoke(this);
+        }
+        
+        private void SwichActiveInventory(InputAction.CallbackContext context)
+        {
+            IsActivated = !IsActivated;
+            _inventoryPanel.SetActive(IsActivated);
         }
     }
 }

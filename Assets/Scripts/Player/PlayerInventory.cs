@@ -21,14 +21,10 @@ namespace Player
         public void Init(Inventory inventory)
         {
             _inventory = inventory;
-        }
-
-        private void OnEnable()
-        {
             _inventory.OnUseItem += AttachObject;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _inventory.OnUseItem -= AttachObject;
         }
