@@ -15,6 +15,7 @@ namespace Environment.Resources
         [SerializeField] private DestructibleResourceHolderData _destructibleResourceHolderData;
         [SerializeField] private float _delayBeforeHitInSeconds;
         [SerializeField] private Item _tool;
+        [SerializeField] private ParticleSystem _particleSystem;
         
         private Coroutine extracting;
         private WaitForSeconds _waitForSeconds;
@@ -62,6 +63,7 @@ namespace Environment.Resources
             {
                 yield return _waitForSeconds;
                 _hitPoints--;
+                _particleSystem.Play();
             }
 
             OnExtracted?.Invoke(_destructibleResourceHolderData.ResourceEntities);
