@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Collectable;
 using Crafting.Recipy;
+using Player;
 using PlayerInventory;
 using PlayerInventory.Item;
 using UnityEngine;
@@ -41,7 +42,6 @@ namespace Crafting.Crafter
 
         private void Start()
         {
-            _inventory = Inventory.instance;
             _craftingUI.CreateCraftingSlots(RecipeDataList);
         }
 
@@ -68,7 +68,8 @@ namespace Crafting.Crafter
             {
                 return;
             }
-        
+
+            _inventory = other.GetComponent<PlayerController>().Inventory;
             IsActivated = true;
             SetActiveCraftingPanel(IsActivated);
         }

@@ -9,14 +9,19 @@ namespace Player
 {
     public class PlayerInventory : MonoBehaviour
     {
-        [SerializeField] private Inventory _inventory;
         [SerializeField] private InventoryUI _inventoryUI;
         [SerializeField] private ToolManager _toolManager;
 
+        private Inventory _inventory;
         private Item _currentItem;
         
         public bool IsEquipedItem { get; set; }
         public Item CurrentInstrument => _currentItem;
+
+        public void Init(Inventory inventory)
+        {
+            _inventory = inventory;
+        }
 
         private void OnEnable()
         {

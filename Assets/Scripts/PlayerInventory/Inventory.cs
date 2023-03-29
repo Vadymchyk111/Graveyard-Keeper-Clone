@@ -17,8 +17,6 @@ namespace PlayerInventory
         
         private PlayerInputActionsAsset _playerInputActionsAsset;
         private readonly List<Item.Item> items = new();
-        
-        public static Inventory instance;
 
         public bool IsActivated { get; set; }
         public List<Item.Item> Items => items;
@@ -26,7 +24,6 @@ namespace PlayerInventory
 
         private void Awake()
         {
-            instance = this;
             _playerInputActionsAsset = new PlayerInputActionsAsset();
             _inventoryPanel.SetActive(false);
         }

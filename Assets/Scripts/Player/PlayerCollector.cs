@@ -8,10 +8,10 @@ namespace Player
     public class PlayerCollector : MonoBehaviour, ICollector
     {
         private Inventory _inventory;
-        
-        private void Start()
+
+        public void Init(Inventory inventory)
         {
-            _inventory = Inventory.instance;
+            _inventory = inventory;
         }
 
         public void PickUp(ICollectable collectable)

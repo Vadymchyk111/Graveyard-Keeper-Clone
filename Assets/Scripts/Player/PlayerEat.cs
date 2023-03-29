@@ -10,8 +10,14 @@ namespace Player
     public class PlayerEat : MonoBehaviour
     {
         public event Action<float> OnRecoveryStarve;
-        [SerializeField] private Inventory _inventory;
+        
+        private Inventory _inventory;
 
+        public void Init(Inventory inventory)
+        {
+            _inventory = inventory;
+        }
+        
         private void OnEnable()
         {
             _inventory.OnUseItem += TryToEat;

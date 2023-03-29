@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Environment;
 using Extractable;
@@ -17,8 +18,15 @@ namespace Player
         [SerializeField] private PlayerInventory _playerInventory;
         [SerializeField] private AnimationController _animationController;
         [SerializeField] private MoveByPhysicsController _moveByPhysicsController;
+        [SerializeField] private Inventory _inventory;
 
         public AnimationController AnimationController => _animationController;
+        public Inventory Inventory => _inventory;
+
+        private void Awake()
+        {
+            Init();
+        }
 
         private void OnEnable()
         {
@@ -63,6 +71,13 @@ namespace Player
         private void RecoveryStarve(float recoveryValue)
         {
             _playerStats.RecoveryStarve(recoveryValue);
+        }
+
+        private void Init()
+        {
+            _playerCollector.Init(_inventory);
+            _playerEat.Init(_inventory);
+            _playerInventory.Init(_inventory);
         }
     }
 }
