@@ -13,6 +13,7 @@ namespace Player
     public class PlayerExtractor : MonoBehaviour, IExtractor
     {
         public event Action<List<Item>> OnExtracted;
+        public event Action OnExtractHit;
 
         [SerializeField] private ItemAnimationEntityManager _itemAnimationEntityManager;
         [SerializeField] private PlayerController _playerController;
@@ -80,6 +81,11 @@ namespace Player
             {
                 _playerController.AnimationController.SetExtraction(isActive, animationParameter);
             }
+        }
+
+        public void HitExtract()
+        {
+            OnExtractHit?.Invoke();
         }
     }
 }

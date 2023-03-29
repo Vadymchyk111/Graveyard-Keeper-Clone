@@ -13,60 +13,34 @@ namespace Environment.Resources
         public event Action<ResourceEntity[]> OnExtracted;
         
         [SerializeField] private DestructibleResourceHolderData _destructibleResourceHolderData;
-        [SerializeField] private float _delayBeforeHitInSeconds;
         [SerializeField] private Item _tool;
         [SerializeField] private ParticleSystem _particleSystem;
         
         private Coroutine extracting;
-        private WaitForSeconds _waitForSeconds;
         private int _hitPoints;
+        private IExtractor _extractor;
 
         public bool IsEmpty { get; set; }
         public Item Tool => _tool;
 
         private void Start()
         {
-            _hitPoints = _destructibleResourceHolderData.HitPoints; 
-            _waitForSeconds = new WaitForSeconds(_delayBeforeHitInSeconds);
+            _hitPoints = _destructibleResourceHolderData.HitPoints;
         }
 
-        public void StartExtracting(IExtractor extractor)
+        private void DoExtractHit()
         {
-            if (!extractor.StartExtract(this))
-            {
-                return;
-            }
-            
-            if (extracting != null)
-            {
-                StopCoroutine(extracting);
-            }
-
             if (_hitPoints > 0)
             {
-                extracting = StartCoroutine(ExtractingCoroutine());
-            }
-        }
-
-        public void StopExtracting(IExtractor extractor)
-        {
-            extractor.StopExtract();
-            if (extracting != null)
-            {
-                StopCoroutine(extracting);
-            }
-        }
-
-        private IEnumerator ExtractingCoroutine()
-        {
-            while (_hitPoints > 0)
-            {
-                yield return _waitForSeconds;
                 _hitPoints--;
                 _particleSystem.Play();
+                return;
             }
 
             OnExtracted?.Invoke(_destructibleResourceHolderData.ResourceEntities);
+            _extractor.OnExtractHit -= DoExtractHit;
+            _extractor.StopExtract();
+            _extractor = null;
             Destroy(gameObject);
         }
 
@@ -76,7 +50,7 @@ namespace Environment.Resources
             {
                 return;
             }
-        
+
             IExtractor extractor = other.gameObject.GetComponent<IExtractor>();
 
             if(extractor == null)
@@ -84,7 +58,9 @@ namespace Environment.Resources
                 return;
             }
 
-            StartExtracting(extractor);
+            extractor.StartExtract(this);
+            _extractor = extractor;
+            extractor.OnExtractHit += DoExtractHit;
         }
 
         private void OnTriggerExit(Collider other)
@@ -101,7 +77,9 @@ namespace Environment.Resources
                 return;
             }
 
-            StopExtracting(extractor);
+            extractor.StopExtract();
+            _extractor = null;
+            extractor.OnExtractHit -= DoExtractHit;
         }
     }
 }

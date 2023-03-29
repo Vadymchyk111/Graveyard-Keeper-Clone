@@ -34,6 +34,7 @@ namespace Player
             _playerStats.OnDied += OnDied;
             _playerExtractor.OnExtracted += FillInventory;
             _moveByPhysicsController.OnPlayerMove += SetActiveMove;
+            _animationController.OnMiningHit += _playerExtractor.HitExtract;
         }
 
         private void OnDisable()
@@ -42,6 +43,7 @@ namespace Player
             _playerStats.OnDied -= OnDied;
             _playerExtractor.OnExtracted -= FillInventory;
             _moveByPhysicsController.OnPlayerMove -= SetActiveMove;
+            _animationController.OnMiningHit -= _playerExtractor.HitExtract;
         }
 
         public bool CheckEquipedInstrument(IExtractable extractable)

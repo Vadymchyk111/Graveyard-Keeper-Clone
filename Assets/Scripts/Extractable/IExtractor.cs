@@ -8,6 +8,7 @@ namespace Extractable
     public interface IExtractor 
     {
         event Action<List<Item>> OnExtracted;
+        event Action OnExtractHit;
 
         bool StartExtract(IExtractable extractable);
         void StopExtract();

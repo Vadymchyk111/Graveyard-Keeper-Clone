@@ -10,8 +10,5 @@ namespace Extractable
         event Action<ResourceEntity[]> OnExtracted;
         bool IsEmpty { get; set; }
         Item Tool { get; }
-
-        void StartExtracting(IExtractor extractor);
-        void StopExtracting(IExtractor extractor);
     }
 }
