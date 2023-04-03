@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using PlayerInventory.ItemFolder;
 using UnityEngine;
@@ -18,9 +17,9 @@ namespace PlayerInventory
         private PlayerInputActionsAsset _playerInputActionsAsset;
         private readonly List<Item> items = new();
 
-        public bool IsActivated { get; set; }
         public List<Item> Items => items;
         public int InventorySize => items.Count;
+        private bool IsActivated { get; set; }
 
         private void Awake()
         {
@@ -30,13 +29,13 @@ namespace PlayerInventory
 
         private void OnEnable()
         {
-            _playerInputActionsAsset.Player.OpenInventory.performed += SwitchActiveInventory;
+            _playerInputActionsAsset.Player.OpenInventory.performed += SwichActiveInventory;
             _playerInputActionsAsset.Player.OpenInventory.Enable();
         }
 
         private void OnDisable()
         {
-            _playerInputActionsAsset.Player.OpenInventory.performed -= SwitchActiveInventory;
+            _playerInputActionsAsset.Player.OpenInventory.performed -= SwichActiveInventory;
             _playerInputActionsAsset.Player.OpenInventory.Disable();
         }
 
@@ -84,11 +83,11 @@ namespace PlayerInventory
                     AddItem(itemEntity.Item, false);
                 }
             }
-
+            
             onInited?.Invoke(this);
         }
         
-        private void SwitchActiveInventory(InputAction.CallbackContext context)
+        private void SwichActiveInventory(InputAction.CallbackContext context)
         {
             IsActivated = !IsActivated;
             _inventoryPanel.SetActive(IsActivated);
