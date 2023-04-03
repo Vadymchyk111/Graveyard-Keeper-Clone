@@ -274,7 +274,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354380882350205405}
-  m_LocalRotation: {x: -0, y: 0.6921347, z: -0, w: 0.72176844}
+  m_LocalRotation: {x: 0, y: 0.6921368, z: 0, w: 0.72176635}
   m_LocalPosition: {x: -6.37, y: 0.5177002, z: 3.66}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -318,6 +318,7 @@ MonoBehaviour:
   recipeDataList:
   - {fileID: 11400000, guid: bf13a96847da6594d81351c8dc5cc687, type: 2}
   - {fileID: 11400000, guid: 2d7bbafb1f8a60f4bb219f4fb35535f3, type: 2}
+  - {fileID: 11400000, guid: 0e81fa5d4adac2e48be102a42b22f15c, type: 2}
   _craftingUI: {fileID: 0}
 --- !u!1 &1551121054324188904
 GameObject:

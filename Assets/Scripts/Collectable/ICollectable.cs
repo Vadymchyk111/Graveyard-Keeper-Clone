@@ -1,6 +1,6 @@
 using System;
 using PlayerInventory;
-using PlayerInventory.Item;
+using PlayerInventory.ItemFolder;
 
 namespace Collectable
 {

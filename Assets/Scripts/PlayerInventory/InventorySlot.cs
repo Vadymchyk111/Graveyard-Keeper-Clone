@@ -1,5 +1,6 @@
 using System;
 using Collectable;
+using PlayerInventory.ItemFolder;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,14 +8,14 @@ namespace PlayerInventory
 {
     public class InventorySlot: MonoBehaviour
     {
-        public event Action<Item.Item> OnInventorySelected;
+        public event Action<Item> OnInventorySelected;
 
         [SerializeField] private Image _icon;
         [SerializeField] private Button _button;
 
-        private Item.Item _item;
+        private Item _item;
         
-        public Item.Item Item => _item;
+        public Item Item => _item;
 
         private void OnEnable()
         {
@@ -26,7 +27,7 @@ namespace PlayerInventory
             _button.onClick.RemoveListener(SendClickEvent);
         }
 
-        public void AddItem(Item.Item item)
+        public void AddItem(Item item)
         {
             _item = item;
             

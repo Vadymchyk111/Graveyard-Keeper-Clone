@@ -1,3 +1,4 @@
+using PlayerInventory.ItemFolder;
 using UnityEngine;
 
 namespace PlayerInventory
@@ -39,7 +40,7 @@ namespace PlayerInventory
             }
         }
 
-        private void SelectInventory(Item.Item item)
+        private void SelectInventory(Item item)
         {
             _inventory.UseItem(item);
         }

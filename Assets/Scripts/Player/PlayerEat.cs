@@ -1,8 +1,6 @@
 using System;
-using Collectable;
-using Eatable;
 using PlayerInventory;
-using PlayerInventory.Item;
+using PlayerInventory.ItemFolder;
 using UnityEngine;
 
 namespace Player

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using ItemReceiver;
 using PlayerInventory;
-using PlayerInventory.Item;
-using Resourses.Generall;
+using PlayerInventory.ItemFolder;
+using Resources.Generall;
 using UnityEngine;
 
 namespace ReceiverObjects

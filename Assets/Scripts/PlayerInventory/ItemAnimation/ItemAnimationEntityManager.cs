@@ -1,4 +1,5 @@
 using System.Linq;
+using PlayerInventory.ItemFolder;
 using UnityEngine;
 
 namespace PlayerInventory.ItemAnimation
@@ -8,7 +9,7 @@ namespace PlayerInventory.ItemAnimation
     {
         [SerializeField] private ItemAnimationEntity[] _itemAnimationEntities;
 
-        public string GetAnimationProperty(Item.Item item)
+        public string GetAnimationProperty(Item item)
         {
             string findedAnimationProperty = string.Empty;
 

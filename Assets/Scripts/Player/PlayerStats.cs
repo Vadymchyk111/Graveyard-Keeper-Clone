@@ -1,36 +1,38 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Player.UI;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+namespace Player
 {
-    public event Action OnDied;
-
-    [SerializeField] private StarveSliderController _starveSliderController;
-
-    private void Start()
+    public class PlayerStats : MonoBehaviour
     {
-        _starveSliderController.StartStarveCalculation();
-    }
+        public event Action OnDied;
 
-    private void OnEnable()
-    {
-        _starveSliderController.OnStarveIsZero += DoDied;
-    }
+        [SerializeField] private StarveSliderController _starveSliderController;
 
-    private void OnDisable()
-    {
-        _starveSliderController.OnStarveIsZero -= DoDied;
-    }
+        private void Start()
+        {
+            _starveSliderController.StartStarveCalculation();
+        }
 
-    public void RecoveryStarve(float starveValue)
-    {
-        _starveSliderController.RecoveryStarve(starveValue);
-    }
+        private void OnEnable()
+        {
+            _starveSliderController.OnStarveIsZero += DoDied;
+        }
 
-    private void DoDied()
-    {
-        OnDied?.Invoke();
+        private void OnDisable()
+        {
+            _starveSliderController.OnStarveIsZero -= DoDied;
+        }
+
+        public void RecoveryStarve(float starveValue)
+        {
+            _starveSliderController.RecoveryStarve(starveValue);
+        }
+
+        private void DoDied()
+        {
+            OnDied?.Invoke();
+        }
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using PlayerInventory.Item;
+using PlayerInventory.ItemFolder;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,17 +9,17 @@ namespace PlayerInventory
 {
     public class Inventory : MonoBehaviour
     {
-        public event Action<Item.Item> OnUseItem;
+        public event Action<Item> OnUseItem;
         public event Action OnInventoryChanged;
 
         [SerializeField] private GameObject _inventoryPanel;
         [SerializeField] private ItemEntityHolder _itemEntityHolder;
         
         private PlayerInputActionsAsset _playerInputActionsAsset;
-        private readonly List<Item.Item> items = new();
+        private readonly List<Item> items = new();
 
         public bool IsActivated { get; set; }
-        public List<Item.Item> Items => items;
+        public List<Item> Items => items;
         public int InventorySize => items.Count;
 
         private void Awake()
@@ -30,17 +30,17 @@ namespace PlayerInventory
 
         private void OnEnable()
         {
-            _playerInputActionsAsset.Player.OpenInventory.performed += SwichActiveInventory;
+            _playerInputActionsAsset.Player.OpenInventory.performed += SwitchActiveInventory;
             _playerInputActionsAsset.Player.OpenInventory.Enable();
         }
 
         private void OnDisable()
         {
-            _playerInputActionsAsset.Player.OpenInventory.performed -= SwichActiveInventory;
+            _playerInputActionsAsset.Player.OpenInventory.performed -= SwitchActiveInventory;
             _playerInputActionsAsset.Player.OpenInventory.Disable();
         }
 
-        public void AddItem(Item.Item item, bool impactOnSaves = true)
+        public void AddItem(Item item, bool impactOnSaves = true)
         {
             items.Add(item);
             
@@ -52,7 +52,7 @@ namespace PlayerInventory
             OnInventoryChanged?.Invoke();
         }
         
-        public void RemoveItem(Item.Item item, bool impactOnSaves = true)
+        public void RemoveItem(Item item, bool impactOnSaves = true)
         {
             items.Remove(item);
             
@@ -64,7 +64,7 @@ namespace PlayerInventory
             OnInventoryChanged?.Invoke();
         }
 
-        public void UseItem(Item.Item item)
+        public void UseItem(Item item)
         {
             OnUseItem?.Invoke(item);
         }
@@ -84,11 +84,11 @@ namespace PlayerInventory
                     AddItem(itemEntity.Item, false);
                 }
             }
-            
+
             onInited?.Invoke(this);
         }
         
-        private void SwichActiveInventory(InputAction.CallbackContext context)
+        private void SwitchActiveInventory(InputAction.CallbackContext context)
         {
             IsActivated = !IsActivated;
             _inventoryPanel.SetActive(IsActivated);

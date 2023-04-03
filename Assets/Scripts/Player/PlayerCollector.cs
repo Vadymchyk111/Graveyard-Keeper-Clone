@@ -1,6 +1,6 @@
 using Collectable;
 using PlayerInventory;
-using PlayerInventory.Item;
+using PlayerInventory.ItemFolder;
 using UnityEngine;
 
 namespace Player

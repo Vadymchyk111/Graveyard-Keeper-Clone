@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using Values.ScriptableObjects;
 
-namespace GraveyardKeeper.Editor
+namespace Editor
 {
     [CustomEditor(typeof(ScriptableObjectInt))]
     public class ScriptableObjectIntEditor : UnityEditor.Editor

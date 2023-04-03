@@ -3,7 +3,7 @@ using Collectable;
 using Crafting.Recipy;
 using Player;
 using PlayerInventory;
-using PlayerInventory.Item;
+using PlayerInventory.ItemFolder;
 using UnityEngine;
 using static General.Contants;
 

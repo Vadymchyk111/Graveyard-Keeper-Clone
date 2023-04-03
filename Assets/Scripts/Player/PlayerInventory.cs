@@ -1,6 +1,6 @@
 using System;
 using PlayerInventory;
-using PlayerInventory.Item;
+using PlayerInventory.ItemFolder;
 using Tools;
 using Tools.Generall;
 using UnityEngine;

@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using Extractable;
 using General;
-using PlayerInventory.Item;
-using Resourses.Generall;
+using PlayerInventory.ItemFolder;
+using Resources.Generall;
 using UnityEngine;
 
 namespace Environment.Resources

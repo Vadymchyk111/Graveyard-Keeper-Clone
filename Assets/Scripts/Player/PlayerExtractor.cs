@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Environment;
 using Extractable;
 using PlayerInventory;
-using PlayerInventory.Item;
 using PlayerInventory.ItemAnimation;
-using Resourses.Generall;
+using PlayerInventory.ItemFolder;
+using Resources.Generall;
 using UnityEngine;
 
 namespace Player

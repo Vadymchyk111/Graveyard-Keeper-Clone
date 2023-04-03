@@ -1,7 +1,7 @@
 using System;
 using Environment;
-using PlayerInventory.Item;
-using Resourses.Generall;
+using PlayerInventory.ItemFolder;
+using Resources.Generall;
 
 namespace Extractable
 {
