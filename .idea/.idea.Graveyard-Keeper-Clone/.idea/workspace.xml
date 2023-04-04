@@ -1,101 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf5f1633-52bc-4e10-b764-d2aabad29e3b" name="Changes" comment="Added Some Fixes">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/EatableItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/EatableItemEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/EatableItemEntity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/BaseItem.cs.meta" afterDir="false" />
+    <list default="true" id="cf5f1633-52bc-4e10-b764-d2aabad29e3b" name="Changes" comment="Added Main Menu">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuPanel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuPanel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuPanelUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graveyard-Keeper-Clone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graveyard-Keeper-Clone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/PEButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/PEButtonScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/PEDestoryTimed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/PEDestoryTimed.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/ParticleEffectsLibrary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/ParticleEffectsLibrary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/UICanvasManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/UICanvasManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXButtonScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXFireProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXFireProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXLoopScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXLoopScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXMouseOrbit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXMouseOrbit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXProjectileScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXProjectileScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Demo/Scripts/ETFXSceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Scripts/ETFXLightFade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Scripts/ETFXLightFade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Scripts/ETFXPitchRandomizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Scripts/ETFXPitchRandomizer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Scripts/ETFXRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Epic Toon FX/Scripts/ETFXRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Crafting table.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Crafting table.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/Apple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/Apple.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/Apple.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/Apple.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/DestructibleResourses/BigRock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/DestructibleResourses/BigRock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/DestructibleResourses/Tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/DestructibleResourses/Tree.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/Rock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/Rock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resources/Rock.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resources/Rock.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Settings/PlayerInputActionsAsset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input Settings/PlayerInputActionsAsset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Settings/PlayerInputActionsAsset.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input Settings/PlayerInputActionsAsset.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Inventory/ItemEntityHolder.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Inventory/ItemEntityHolder.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Recipes/AppleRecipe.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Recipes/AppleRecipe.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collectable/ICollectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collectable/ICollectable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crafting/Crafter/CraftingTableController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crafting/Crafter/CraftingTableController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crafting/Crafter/ICrafter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crafting/Crafter/ICrafter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crafting/Recipy/RecipeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crafting/Recipy/RecipeData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crafting/Recipy/UI/RecipeSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crafting/Recipy/UI/RecipeSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Eatable.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Eatable/IEatable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Eatable/IEatable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Eatable/IEater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Eatable/IEater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ScriptableObjectIntEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ScriptableObjectIntEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Environment/Resources/DestractableResourceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Environment/Resources/DestractableResourceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extractable/IExtractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extractable/IExtractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extractable/IExtractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extractable/IExtractor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemReceiver/IItemReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemReceiver/IItemReceiver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCollector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerExtractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerExtractor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/UI/StarveSliderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/UI/StarveSliderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/InventorySlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/InventoryUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item/EatableItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item/EatableItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/EatableItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item/Item.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/Item.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item/ItemEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/ItemEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item/ItemEntity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/ItemEntity.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item/ItemEntityHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/ItemEntityHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/Item/ItemEntityHolder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/ItemEntityHolder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemAnimation/ItemAnimationEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemAnimation/ItemAnimationEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemAnimation/ItemAnimationEntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemAnimation/ItemAnimationEntityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReceiverObjects/ReceiverBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ReceiverObjects/ReceiverBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Apple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/BaseItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Apple.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Generall.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/Generall.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Generall/DestructibleResourceHolderData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/Generall/DestructibleResourceHolderData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Generall/DestructibleResourceHolderData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/Generall/DestructibleResourceHolderData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Generall/ResourceEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/Generall/ResourceEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Generall/ResourceEntity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/Generall/ResourceEntity.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Generall/ResourceHolderData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/Generall/ResourceHolderData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Generall/ResourceHolderData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/Generall/ResourceHolderData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Mushroom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Mushroom.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Rock.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/Rock.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/UI.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/UI/ResourceEntityWorldView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/UI/ResourceEntityWorldView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/UI/ResourceEntityWorldView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/UI/ResourceEntityWorldView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/UI/ResourceEntityWorldViewHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/UI/ResourceEntityWorldViewHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/UI/ResourceEntityWorldViewHolder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/UI/ResourceEntityWorldViewHolder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/UI/WorldViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/UI/WorldViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resourses/UI/WorldViewController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/UI/WorldViewController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/Generall/IToolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/Generall/IToolManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/Tool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/Tool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/ToolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/ToolManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/HDRPUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/HDRPUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +23,13 @@
       <option value="directory" />
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1f27d5adf942acb04444fee22824ee10fc00/80/77364373/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ef0aba8f354462fbb62f28d34e3770d3400/e4/1313696c/JsonUtility.cs" root0="SKIP_HIGHLIGHTING" />
@@ -115,18 +38,25 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Enviroment/Cloud/MovementToPoin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/Prefabs/UI/ResourceEntityWorldView.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Crafting/Recipy/UI/Values/ValueTextUpdater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerExtractor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/Scripts/PlayerInventory/Inventory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemAnimation/ItemAnimationEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemAnimation/ItemAnimationEntityManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Resources/BaseItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Values/ScriptableObjects/ScriptableObjectInt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Values/ValueInt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Effectors/RigEffectorWizard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.0/InputSystem/Devices/InputDeviceBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -168,10 +98,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="24992">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="24992" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -233,7 +163,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680124123213</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Terain And Terain Textures">
+      <created>1680520223495</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680520223495</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added Main Menu">
+      <created>1680521239014</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680521239014</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +204,9 @@
     <MESSAGE value="Added Particle System" />
     <MESSAGE value="Changed Extraction System From Coroutine to Animation Events" />
     <MESSAGE value="Added Some Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Some Fixes" />
+    <MESSAGE value="Added Terain And Terain Textures" />
+    <MESSAGE value="Added Main Menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Main Menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -268,14 +214,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Resources/UI/WorldViewController.cs</url>
           <line>22</line>
-          <properties documentPath="D:\Projects\Graveyard-Keeper-Clone\Assets\Scripts\Resourses\UI\WorldViewController.cs" initialLine="22" containingFunctionPresentation="method 'LookToCamera'">
-            <startOffsets>
-              <option value="536" />
-            </startOffsets>
-            <endOffsets>
-              <option value="550" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Projects\Graveyard-Keeper-Clone\Assets\Scripts\Resourses\UI\WorldViewController.cs" initialLine="22" containingFunctionPresentation="method 'LookToCamera'" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
