@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf5f1633-52bc-4e10-b764-d2aabad29e3b" name="Changes" comment="Added Main Menu">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuPanel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuPanel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuPanelUI.cs" afterDir="false" />
+    <list default="true" id="cf5f1633-52bc-4e10-b764-d2aabad29e3b" name="Changes" comment="Added Terain Layouts">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graveyard-Keeper-Clone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graveyard-Keeper-Clone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Settings/PlayerInputActionsAsset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input Settings/PlayerInputActionsAsset.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Settings/PlayerInputActionsAsset.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input Settings/PlayerInputActionsAsset.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +14,13 @@
       <option value="directory" />
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="develop" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
   </component>
@@ -37,15 +31,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8a406da998549af9a2680936c7da25a159c00/95/db605f9a/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/New Terrain.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/New Terrain.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/New Terrain.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Enviroment/Cloud/MovementToPoin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/Prefabs/UI/ResourceEntityWorldView.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Crafting/Recipy/UI/Values/ValueTextUpdater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerExtractor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/Assets/Scripts/PlayerInventory/Inventory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemAnimation/ItemAnimationEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemAnimation/ItemAnimationEntityManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInventory/ItemFolder/Item.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,7 +49,6 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.0/InputSystem/Devices/InputDeviceBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Projects/Graveyard-Keeper-Clone/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -177,7 +169,35 @@
       <option name="project" value="LOCAL" />
       <updated>1680521239014</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Returned Terain">
+      <created>1680610927548</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680610927548</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Returned Terain">
+      <created>1680611031781</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680611031781</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Terain Textures">
+      <created>1680611850529</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680611850529</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added Terain Layouts">
+      <created>1680612445073</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680612445073</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +226,10 @@
     <MESSAGE value="Added Some Fixes" />
     <MESSAGE value="Added Terain And Terain Textures" />
     <MESSAGE value="Added Main Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Main Menu" />
+    <MESSAGE value="Returned Terain" />
+    <MESSAGE value="Terain Textures" />
+    <MESSAGE value="Added Terain Layouts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Terain Layouts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
